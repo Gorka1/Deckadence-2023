@@ -92,7 +92,8 @@ Transform:
   m_LocalPosition: {x: 0, y: 0.733, z: -0.087}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
-  m_Children: []
+  m_Children:
+  - {fileID: 6761673866379298833}
   m_Father: {fileID: 6701475015371736361}
   m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -121,7 +122,7 @@ Camera:
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
-  field of view: 60
+  field of view: 90
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -195,7 +196,6 @@ Transform:
   - {fileID: 6701475015901293386}
   - {fileID: 6701475014955813813}
   - {fileID: 6701475014276459407}
-  - {fileID: 6761673866379298833}
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -230,14 +230,24 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 6701475015371736360}
-  speed: 8
-  gravity: -19.62
+  playerBody: {fileID: 6701475015371736361}
+  baseSpeed: 20
+  slideSpeed: 35
+  gravity: -29.43
   jumpHeight: 4
+  momentumIncrease: 0.005
+  momentumIncreaseDecay: 0.95
+  momentumDecrease: 0.05
+  momentumDecreaseDelay: 0.5
+  momentumMax: 3
+  momentumSlideMax: 0
   groundCheck: {fileID: 6701475014276459407}
   groundDist: 0.4
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  momentum: 0
+  slideHeightBuffer: 2
 --- !u!114 &3060305844561698961
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -250,6 +260,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a2aacba81018a64c9474628fa99ba8f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _scriptObj: {fileID: 11400000, guid: e3393b35ab5d067428b190884a601287, type: 2}
   WeaponPoint: {fileID: 7293041719500313859}
 --- !u!1 &6701475015901293389
 GameObject:
@@ -358,15 +369,15 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 7293041719500313859}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.5, y: 0.306, z: 0.656}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.5, y: -0.42699993, z: 0.74300003}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 9067599935863483037}
   - {fileID: 8673639957449747974}
-  m_Father: {fileID: 6701475015371736361}
-  m_RootOrder: 3
+  m_Father: {fileID: 6701475014955813813}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!111 &6777561993613140862
 Animation:

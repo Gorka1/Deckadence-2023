@@ -6,10 +6,18 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public CharacterController controller;
+    public Transform playerBody;
 
-    public float speed = 12f;
+    public float baseSpeed = 12f;
+    public float slideSpeed = 12f;
     public float gravity = -9.81f;
     public float jumpHeight = 4f;
+    public float momentumIncrease;
+    public float momentumIncreaseDecay = .1f;
+    public float momentumDecrease;
+    public float momentumDecreaseDelay;
+    public float momentumMax;
+    public float momentumSlideMax;
 
     // ref to groundchecking obj
     public Transform groundCheck;
@@ -18,6 +26,17 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
+    bool isSliding = false;
+    delegate Vector3 MoveFunction();
+    MoveFunction move;
+    [SerializeField]
+    float momentum;
+    Vector3 slideDirection;     // not resetting correctly
+    bool slideSet;
+    float momentumDecreaseTimer = 0;
+    [SerializeField]
+    float slideHeightBuffer = .5f;
+    float internalMomentumIncrease;
 
     void Update()
     {
@@ -28,11 +47,22 @@ public class PlayerMovement : MonoBehaviour
             velocity.y = -2f;
         }
 
-        // horizontal movement controls
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
-        Vector3 move = transform.right * x + transform.forward * z;
-        controller.Move(move * speed * Time.deltaTime);
+        if (Input.GetButtonDown("Slide")) {
+            isSliding = true;
+            internalMomentumIncrease = momentumIncrease;
+        }
+        bool jumpRaycastResult = Physics.Raycast(groundCheck.position, transform.TransformDirection(Vector3.down), slideHeightBuffer, groundMask);
+        //Debug.Log(jumpRaycastResult);
+        if (Input.GetButtonUp("Slide") || !jumpRaycastResult) { 
+            isSliding = false; 
+        }
+
+        if (isSliding && isGrounded) {
+            move = SlideMovement;
+        } else {
+            move = BaseMovement;
+        }
+        controller.Move(move() * Time.deltaTime);
 
         // jump controls
         if (Input.GetButtonDown("Jump") && isGrounded) {
@@ -42,5 +72,53 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+    }
+
+    Vector3 GetInputDirection() {
+        float x = Input.GetAxis("Horizontal");
+        float z = Input.GetAxis("Vertical");
+        return transform.right * x + transform.forward * z;
+    }
+
+    Vector3 BaseMovement() {
+        // base movement checks
+        if (momentum != 1 && isGrounded) {
+            if (momentumDecreaseTimer <= 0)
+            {
+                momentum -= momentumDecrease;
+                if (momentum < 1) {
+                    momentum = 1;
+                }
+            } else {
+                momentumDecreaseTimer -= 1 * Time.deltaTime;
+            }
+        }
+        if (slideSet) {
+            slideDirection = Vector3.zero;
+            slideSet = false;
+        }
+        // horizontal movement
+        return GetInputDirection() * baseSpeed * momentum;
+    }
+
+    Vector3 SlideMovement() {
+        if (momentum <= momentumMax) {
+            momentum += internalMomentumIncrease;
+            internalMomentumIncrease *= momentumIncreaseDecay;
+            if (momentum > momentumMax) {
+                momentum = momentumMax;
+            }
+            momentumDecreaseTimer = momentumDecreaseDelay;
+        }
+        if (!slideSet) {
+            slideDirection = GetInputDirection();
+            Debug.Log(slideDirection);
+            if (slideDirection.Equals(Vector3.zero)) {
+                Debug.Log("Getting direction from rotation");
+                slideDirection = transform.forward;
+            }
+            slideSet = true;
+        }
+        return slideDirection * slideSpeed;
     }
 }

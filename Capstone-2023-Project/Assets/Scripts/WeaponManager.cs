@@ -3,8 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class WeaponManager : MonoBehaviour
-{
-    
+{   
     public WeaponObj ScriptObj {
         get { return this._scriptObj; }
         set {

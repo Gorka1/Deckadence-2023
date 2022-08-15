@@ -16,5 +16,5 @@ MonoBehaviour:
   cardIcon: {fileID: 0}
   model: {fileID: 3505449482831923185, guid: 14a6ca8a40595c34ea0fd8b47791df19, type: 3}
   animations: {fileID: 0}
-  jsonData: {fileID: 4900000, guid: 8eb8796934d68ac4392b345c34d76bbd, type: 3}
+  jsonData: {fileID: 4900000, guid: ee95048b80bad7540a498fc06e568ac2, type: 3}
   sounds: []
