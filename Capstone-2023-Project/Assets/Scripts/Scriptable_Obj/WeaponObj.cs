@@ -10,5 +10,6 @@ public class WeaponObj : ScriptableObject {
     public AnimationClip animations;    // how are animations done in unity, it's been like 5 years
     public TextAsset jsonData;
     public List<AudioClip> sounds;
+    public GameObject projectile = null;
     public delegate void attack();
 }

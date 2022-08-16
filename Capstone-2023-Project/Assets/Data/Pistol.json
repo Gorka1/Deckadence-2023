@@ -5,5 +5,5 @@
     "projectilePresent": false,
     "automatic": true,
     "fireType": "basic",
-    "ammo": 20
+    "ammo": 10
 }

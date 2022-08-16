@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 // basic fps movement, taken from brackeys video
 public class PlayerMovement : MonoBehaviour
@@ -37,6 +38,8 @@ public class PlayerMovement : MonoBehaviour
     [SerializeField]
     float slideHeightBuffer = .5f;
     float internalMomentumIncrease;
+    [SerializeField]
+    Text momentumText; 
 
     void Update()
     {
@@ -72,6 +75,9 @@ public class PlayerMovement : MonoBehaviour
         velocity.y += gravity * Time.deltaTime;
 
         controller.Move(velocity * Time.deltaTime);
+
+        // demo screen print
+        momentumText.text = "Momentum: " + momentum;
     }
 
     Vector3 GetInputDirection() {

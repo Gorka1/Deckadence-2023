@@ -1,30 +1,70 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class WeaponManager : MonoBehaviour
 {   
-    public WeaponObj ScriptObj {
-        get { return this._scriptObj; }
-        set {
-            this._scriptObj = value;
-            SetWeapon();
-        }
-    }
-    [SerializeField]
-    private WeaponObj _scriptObj;
+    // How does this work:
+    // you have a list of the current weapons in inventory
+    // you instanciate the weapon in the player's hands
+    // it keeps track of how many shots that have been fired
+    // once it reaches the amount, it's done
 
-    private WeaponData weaponData;
     [SerializeField]
-    GameObject WeaponPoint;
+    List<GameObject> weaponInventory;
+    [SerializeField]
+    GameObject weaponPoint;
+    private int ammoCount;
+    private int currindex = 1;
+    private WeaponObj weaponObj;
+    private GameObject currWeapon;
+
+    [SerializeField]
+    Text ammoCounterText;
+    [SerializeField]
+    Text weaponListText;
 
     private void Start() {
-
+        SetupPlayer();
     }
 
-    private void SetWeapon() {
-        Debug.Log("SetWeapon called");
-        weaponData = WeaponData.CreateFromJSON(ScriptObj.jsonData.ToString());
-        Instantiate(ScriptObj.model, WeaponPoint.transform);
+    private void Update() {
+        // count shots made
+        if (Input.GetButtonDown("Fire1")) {
+            ammoCount -= 1;
+        }
+        // swap weapons if there are more weapons in the list, else just unarm player
+        if (ammoCount <= 0) {
+            if (currindex >= weaponInventory.Count) {
+                Destroy(currWeapon);
+            } else {
+                SetWeapon(weaponInventory[currindex]);
+                currindex++;
+            }
+        }
+        // demo screen prints
+        ammoCounterText.text = "Ammo: " + ammoCount;
+        string tempString = "";
+        for (int i = currindex - 1; i < weaponInventory.Count; i++) {
+            tempString += weaponInventory[i].name + " ";
+        }
+        weaponListText.text = "Weapons: " + tempString;
+    }
+
+    private void SetWeapon(GameObject newWeapon) {
+        Destroy(currWeapon);
+        BaseGunScript gunScript = newWeapon.GetComponent<BaseGunScript>();
+        weaponObj = gunScript.GetWeaponObj();
+        ammoCount = WeaponDataObj.CreateFromJSON(weaponObj.jsonData.text).ammo;
+        currWeapon = Instantiate(newWeapon, weaponPoint.transform);
+    }
+
+    public void SetupPlayer() {
+        currindex = 0;
+        if (weaponInventory.Count != 0) {
+            SetWeapon(weaponInventory[currindex]);
+            currindex++;
+        }
     }
 }

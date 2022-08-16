@@ -8,10 +8,13 @@ public abstract class BaseGunScript : MonoBehaviour
     public WeaponObj weaponObject;
     [SerializeField]
     protected WeaponDataObj weaponData;
+    protected GameObject projectileObj;
     private float nextTimeToFire = 0f;
 
     private void Start() {
+        firePoint = this.transform.parent.transform.Find("FirePoint").gameObject;
         weaponData = WeaponDataObj.CreateFromJSON(weaponObject.jsonData.text);
+        projectileObj = weaponObject.projectile;
     }
 
     void Update() {
@@ -27,6 +30,10 @@ public abstract class BaseGunScript : MonoBehaviour
             nextTimeToFire = Time.time + 1f / weaponData.fireRate;
             FireEvent();
         }
+    }
+
+    public WeaponObj GetWeaponObj() {
+        return weaponObject;
     }
 
     public abstract void FireEvent();
