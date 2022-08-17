@@ -12,9 +12,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 6fc952b860c48cd4b928477533467371, type: 3}
   m_Name: TestObj2
   m_EditorClassIdentifier: 
-  name: 
-  cardIcon: {fileID: 0}
+  name: Sniper
+  cardIcon: {fileID: 21300000, guid: dac7066ba29e16848ba8a9e33e84d3b5, type: 3}
   model: {fileID: 3505449482831923185, guid: 14a6ca8a40595c34ea0fd8b47791df19, type: 3}
   animations: {fileID: 0}
   jsonData: {fileID: 4900000, guid: ee95048b80bad7540a498fc06e568ac2, type: 3}
+  data:
+    dmg: 0
+    fireRate: 0
+    projectilePresent: 0
+    fireType: basic
+    range: 0
+    automatic: 0
+    ammo: 0
   sounds: []
+  projectile: {fileID: 0}

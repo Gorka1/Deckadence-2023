@@ -3,7 +3,7 @@
     "fireRate": 5,
     "range": 100,
     "projectilePresent": false,
-    "automatic": true,
+    "automatic": false,
     "fireType": "basic",
     "ammo": 10
 }

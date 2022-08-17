@@ -9,9 +9,11 @@ public abstract class BaseGunScript : MonoBehaviour
     [SerializeField]
     protected WeaponDataObj weaponData;
     protected GameObject projectileObj;
+    protected WeaponManager WM;
     private float nextTimeToFire = 0f;
 
     private void Start() {
+        WM = GameObject.Find("PlayerObject").GetComponent<WeaponManager>();
         firePoint = this.transform.parent.transform.Find("FirePoint").gameObject;
         weaponData = WeaponDataObj.CreateFromJSON(weaponObject.jsonData.text);
         projectileObj = weaponObject.projectile;
@@ -28,6 +30,7 @@ public abstract class BaseGunScript : MonoBehaviour
 
         if (inputRegistered && Time.time >= nextTimeToFire) {
             nextTimeToFire = Time.time + 1f / weaponData.fireRate;
+            WM.UpdateAmmo();
             FireEvent();
         }
     }

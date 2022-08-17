@@ -30,10 +30,6 @@ public class WeaponManager : MonoBehaviour
     }
 
     private void Update() {
-        // count shots made
-        if (Input.GetButtonDown("Fire1")) {
-            ammoCount -= 1;
-        }
         // swap weapons if there are more weapons in the list, else just unarm player
         if (ammoCount <= 0) {
             if (currindex >= weaponInventory.Count) {
@@ -66,5 +62,13 @@ public class WeaponManager : MonoBehaviour
             SetWeapon(weaponInventory[currindex]);
             currindex++;
         }
+    }
+
+    public void AddWeapon(GameObject newWeapon) {
+        weaponInventory.Add(newWeapon);
+    }
+
+    public void UpdateAmmo() {
+        ammoCount -= 1;
     }
 }

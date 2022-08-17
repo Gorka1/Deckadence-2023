@@ -1,0 +1,9 @@
+{
+    "dmg": 2,
+    "fireRate": 10,
+    "range": 100,
+    "projectilePresent": false,
+    "automatic": true,
+    "fireType": "basic",
+    "ammo": 30
+}

@@ -305,6 +305,7 @@
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.Flow.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/Unity.VisualScripting.State.ref.dll"
 -r:"Library/Bee/artifacts/1900b0aP.dag/UnityEngine.UI.ref.dll"
+"Assets/Scripts/ButtonController.cs"
 "Assets/Scripts/GameManager.cs"
 "Assets/Scripts/MouseLook.cs"
 "Assets/Scripts/PlayerMovement.cs"

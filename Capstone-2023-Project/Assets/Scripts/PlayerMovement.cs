@@ -39,10 +39,17 @@ public class PlayerMovement : MonoBehaviour
     float slideHeightBuffer = .5f;
     float internalMomentumIncrease;
     [SerializeField]
-    Text momentumText; 
+    Text momentumText;
+    public bool moveEnabled = true;
 
     void Update()
     {
+        if (moveEnabled) {
+            UpdateMovement();
+        }   
+    }
+
+    void UpdateMovement() {
         isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
 
         // checking if grounded
