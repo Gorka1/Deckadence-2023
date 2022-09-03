@@ -24,6 +24,7 @@ public class GameManager : MonoBehaviour
         }
     }
 
+    // for the individual weapons system
     public void ActivateCardSelection() {
         Cursor.lockState = CursorLockMode.Confined;
         foreach(GameObject button in buttons) {
