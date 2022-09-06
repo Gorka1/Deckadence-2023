@@ -11,4 +11,5 @@ public class GunStats
     public float range = 0f;
     public bool automatic = false;
     public int ammo = 0;
+    public float speed = 0f;
 }

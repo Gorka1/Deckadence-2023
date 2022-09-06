@@ -36,7 +36,8 @@ public class GunManager : MonoBehaviour
     }
 
     private void Fire() {
-        Instantiate(projectileObj, firePoint.transform.position, firePoint.transform.rotation);
+        GameObject bullet = Instantiate(projectileObj, firePoint.transform.position, firePoint.transform.rotation);
+        bullet.GetComponent<BulletMovement>().Setup(firePoint.transform, gunStats.range, gunStats.dmg, gunStats.speed);
     }
 
     public void InputCard(CardData newCard) {

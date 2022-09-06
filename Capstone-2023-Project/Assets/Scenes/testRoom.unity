@@ -2470,9 +2470,25 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1127488716}
     - target: {fileID: 6153055683190725799, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
+      propertyPath: gunStats.dmg
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153055683190725799, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
       propertyPath: projectileObj
       value: 
-      objectReference: {fileID: 3505449482831923185, guid: 4c786e986ecb17f4b9348e70dce03313, type: 3}
+      objectReference: {fileID: 6278266990674932253, guid: ebe18672cedaa2045b100465678315f0, type: 3}
+    - target: {fileID: 6153055683190725799, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
+      propertyPath: gunStats.range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153055683190725799, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
+      propertyPath: gunStats.speed
+      value: 50
+      objectReference: {fileID: 0}
+    - target: {fileID: 6153055683190725799, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
+      propertyPath: gunStats.fireRate
+      value: 20
+      objectReference: {fileID: 0}
     - target: {fileID: 6701475015371736358, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
       propertyPath: momentumText
       value: 
@@ -2524,6 +2540,10 @@ PrefabInstance:
     - target: {fileID: 6701475015371736363, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
       propertyPath: m_Name
       value: PlayerEffectWeapon
+      objectReference: {fileID: 0}
+    - target: {fileID: 8673639957449747974, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0.54
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
