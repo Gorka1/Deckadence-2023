@@ -8,9 +8,15 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     List<GameObject> buttons;
     GameObject playerObj;
+    [SerializeField]
+    GunManager gunM;
+    DeckManager deckM;
+    [SerializeField]
+    CardData testCard;
 
     private void Start() {
-        playerObj = GameObject.Find("PlayerObject");
+        playerObj = GameObject.FindGameObjectWithTag("Player");
+        deckM = this.GetComponent<DeckManager>();
     }
 
     // Update is called once per frame
@@ -20,7 +26,15 @@ public class GameManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
         if (Input.GetKeyDown("e")) {
-            ActivateCardSelection();
+            // ActivateCardSelection();
+            gunM.InputCard(deckM.GetHandCard());
+            deckM.RemoveCurrCard();
+        }
+        if (Input.GetKeyDown("u")) {
+            deckM.AddToDeck(testCard);
+        }
+        if (Input.GetKeyDown("i")) {
+            deckM.AddToHand();
         }
     }
 
