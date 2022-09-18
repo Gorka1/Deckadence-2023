@@ -8,7 +8,9 @@ public class CardUIScript : MonoBehaviour
     [SerializeField]
     Image imageComp;
     public int cardID;
-    public CardData card;
+    public int handIndex;
+    [SerializeField]
+    CardData card;
     bool selected = false;
 
     private void Start() {
@@ -31,6 +33,7 @@ public class CardUIScript : MonoBehaviour
         selected = false;
     }
 
+    public CardData GetCardData() { return card; }
     public bool GetSelectedValue() { return selected; }
     public void DestroySelf() { Destroy(this); }
 }

@@ -31,9 +31,15 @@ public class HotbarManager : MonoBehaviour
         //     CreateHandList(currList);
         // }
         foreach (CardData handCard in currList) {
-            if (!hotbarList.Contains(handCard)) {
-                AddToBar(handCard);
+            foreach (CardUIScript cardScript in cardUIList) {
+                CardData currCard = cardScript.GetCardData();
+                if (currCard != handCard) {
+                    AddToBar(handCard);
+                }
             }
+            // if (!hotbarList.Contains(handCard)) {
+            //     AddToBar(handCard);
+            // }
         }
         foreach (CardData uiCard in hotbarList) {
             if (!currList.Contains(uiCard)) {
@@ -61,7 +67,7 @@ public class HotbarManager : MonoBehaviour
         int posOfCardToRemoveUIList = -1;
         int posOfCardToRemoveHotbarList = -1;
         for (int i = 0; i < cardUIList.Count; i++) {
-            if (cardUIList[i].card.Equals(removedCard)) {
+            if (cardUIList[i].GetCardData().Equals(removedCard)) {
                 posOfCardToRemoveUIList = i;
             }
         }
@@ -82,12 +88,12 @@ public class HotbarManager : MonoBehaviour
     }
     private void SetSelected(CardData newSelected) {
         // this gets fucked up with duplicates in the hand
+        if (currSelected != null){
+            currSelected.Deselect();
+        }
         if (!newSelected.Equals(currSelected)) {
-            if (currSelected != null){
-                currSelected.Deselect();
-            }
             foreach(CardUIScript currScript in cardUIList) {
-                if (currScript.card.Equals(newSelected)) {
+                if (currScript.GetCardData().Equals(newSelected)) {
                     currScript.Select();
                     currSelected = currScript;
                 }

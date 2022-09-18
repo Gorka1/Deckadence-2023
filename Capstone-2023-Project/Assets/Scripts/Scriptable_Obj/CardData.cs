@@ -3,13 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "CardData", menuName = "Capstone-2023-Project/CardData", order = 0)]
-public class CardData : ScriptableObject//, IEqualityComparer<CardData>, IEquatable<CardData>, 
+public class CardData : ScriptableObject
 {
     public int cardID;
+    public int cardRank;
     public Color testWeaponColor;      // placeholder for testing
     public Sprite cardGraphic;
     public Dictionary<string, string> changesDict;
 
+    // extra funcs written to override the comparison process
     public override string ToString()
     {
         return "Card ID: " + cardID;

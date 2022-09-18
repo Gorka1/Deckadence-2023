@@ -32,7 +32,7 @@ public class DeckManager : MonoBehaviour
         else return handList[handListInd];
     }
     public void RemoveCurrCard() {
-        if (handListInd == handList.Count - 1) { handListInd--; }
+        if (handListInd != 0) { handListInd--; }
         handList.RemoveAt(handListInd);
     }
     CardData GetDeckCard() {
