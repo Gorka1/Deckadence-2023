@@ -5,9 +5,11 @@ using UnityEngine;
 public class TargetScript : MonoBehaviour
 {
     float health = 100;
+    [SerializeField]
+    float DamageModifier = 1;
     Renderer materialRenderer;
     public void TakeDamage(float amount) {
-        health -= amount;
+        health -= amount * DamageModifier;
     }
 
     private void Start() {
