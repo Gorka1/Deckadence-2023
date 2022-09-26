@@ -11,6 +11,11 @@ public class CardData : ScriptableObject
     public Sprite cardGraphic;
     public Dictionary<string, string> changesDict;
     public int questCode;
+    // card info
+    public MonoBehaviour effectScript;
+    public string target;
+    public QuestEvent questEvent;
+    public int numberOfEvents;
 
     // extra funcs written to override the comparison process
     public override string ToString()
