@@ -10,6 +10,7 @@ public class CardData : ScriptableObject
     public Color testWeaponColor;      // placeholder for testing
     public Sprite cardGraphic;
     public Dictionary<string, string> changesDict;
+    public int questCode;
 
     // extra funcs written to override the comparison process
     public override string ToString()
