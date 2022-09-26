@@ -72,3 +72,10 @@ crashlytics-build.properties
 /Capstone-2023-Project/[Aa]ssets/[Ss]treamingAssets/aa/*
 
 /Builds/
+
+# Wwise related ignores
+.cache
+*.akd
+*.prof
+*.validationcache
+*/Assets/Wwise/Editor/ProjectData/AkWwiseProjectData.asset*
