@@ -40,6 +40,24 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("i")) {
             deckM.AddToHand();
         }
+        // test event 
+        if (Input.GetKeyDown("m")) {
+            List<string> testConditions = new List<string>();
+            testConditions.Add("test");
+            QuestEvent testEvent = ScriptableObject.CreateInstance("QuestEvent") as QuestEvent;
+            testEvent.Init(
+                QuestEnums.SignalOrigin.Player,
+                testConditions
+            );
+            Debug.Log(testEvent);
+            TakeQuestEvent(testEvent);
+        }
+        if (Input.GetKeyDown("n")) {
+            QueueM.ActivateFirstTwoQuests();
+        }
+        if (Input.GetKeyDown("b")) {
+            QueueM.DiscardCard();
+        }
     }
 
     // for the individual weapons system
@@ -62,4 +80,6 @@ public class GameManager : MonoBehaviour
     public void TakeQuestEvent(QuestEvent inputEvent) {
         QuestM.TakeEvent(inputEvent);
     }
+
+
 }

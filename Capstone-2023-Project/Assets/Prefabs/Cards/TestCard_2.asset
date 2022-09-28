@@ -13,5 +13,12 @@ MonoBehaviour:
   m_Name: TestCard_2
   m_EditorClassIdentifier: 
   cardID: 2
+  cardRank: 0
   testWeaponColor: {r: 0.27843142, g: 1, b: 0.33069816, a: 0}
   cardGraphic: {fileID: 21300000, guid: dac7066ba29e16848ba8a9e33e84d3b5, type: 3}
+  questCode: 0
+  effectScript: {fileID: 0}
+  target: 
+  questEvent: {fileID: 11400000, guid: f7a386173a97d0b4c906501f1c558d8c, type: 2}
+  numberOfEvents: 0
+  questStatus: 0

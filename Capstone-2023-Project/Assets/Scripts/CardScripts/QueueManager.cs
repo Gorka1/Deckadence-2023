@@ -49,4 +49,6 @@ public class QueueManager : MonoBehaviour
         QuestM.RemoveCard(CardQueue[0]);
         CardQueue.RemoveAt(0);
     }
+
+    public void AddToQueue(CardData newCard) { CardQueue.Add(newCard); }
 }

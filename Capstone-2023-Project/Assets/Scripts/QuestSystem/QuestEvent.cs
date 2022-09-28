@@ -13,7 +13,7 @@ public class QuestEvent : ScriptableObject
     [SerializeField]
     bool userMade = true;
 
-    public QuestEvent(QuestEnums.SignalOrigin newOrigin, List<string> newConditions = null) {
+    public void Init(QuestEnums.SignalOrigin newOrigin, List<string> newConditions = null) {
         origin = newOrigin;
         if (newConditions != null) {
             conditions = new List<string>(newConditions);
