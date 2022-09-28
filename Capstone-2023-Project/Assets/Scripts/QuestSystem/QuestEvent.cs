@@ -4,25 +4,41 @@ using UnityEngine;
 
 // [System.Serializable]
 [CreateAssetMenu(fileName = "QuestEvent", menuName = "Capstone-2023-Project/QuestEvent", order = 1)]
-public class QuestEvent : ScriptableObject, System.IEquatable<QuestEvent>
+public class QuestEvent : ScriptableObject
 {
-    public QuestEnums.SignalOrigin origin;
-    public List<string> conditions;
+    [SerializeField]
+    QuestEnums.SignalOrigin origin;
+    [SerializeField]
+    List<string> conditions;
+    [SerializeField]
+    bool userMade = true;
 
-    public override bool Equals(object obj) => this.Equals(obj as QuestEvent);
-    public override int GetHashCode() => conditions.GetHashCode();
+    public QuestEvent(QuestEnums.SignalOrigin newOrigin, List<string> newConditions = null) {
+        origin = newOrigin;
+        if (newConditions != null) {
+            conditions = new List<string>(newConditions);
+        }
+        userMade = false;   // assuming that QuestEvents made with the constructor are not designer made
+    }
 
-    // only events that were designer made can call this
-    public bool Equals(QuestEvent other) {
-        if (this.origin == QuestEnums.SignalOrigin.Quest) {
+    public void AddCondition(string newCondition) {
+        conditions.Add(newCondition);
+    }
+
+    public List<string> GetConditions() { return conditions; }
+    public QuestEnums.SignalOrigin GetOrigin() { return origin; }
+
+    public bool Compare(QuestEvent other) {
+        if (this.userMade && !other.userMade) {
+            if (this.origin != other.origin) {
+                return false;
+            }
             foreach (string currCondition in other.conditions) {
                 if (!this.conditions.Contains(currCondition)) {
                     return false;
                 }
             }
             return true;
-        } else {
-            return false;
-        }
+        } else { return false; }
     }
 }

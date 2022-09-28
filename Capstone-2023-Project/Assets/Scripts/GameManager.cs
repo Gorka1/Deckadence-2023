@@ -11,12 +11,16 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     GunManager gunM;
     DeckManager deckM;
+    QuestManager QuestM;
+    QueueManager QueueM;
     [SerializeField]
     CardData testCard;
 
     private void Start() {
         playerObj = GameObject.FindGameObjectWithTag("Player");
         deckM = this.GetComponent<DeckManager>();
+        QuestM = this.GetComponent<QuestManager>();
+        QueueM = this.GetComponent<QueueManager>();
     }
 
     // Update is called once per frame
@@ -53,5 +57,9 @@ public class GameManager : MonoBehaviour
             button.SetActive(false);
         }
         playerObj.GetComponent<PlayerMovement>().moveEnabled = true;
+    }
+
+    public void TakeQuestEvent(QuestEvent inputEvent) {
+        QuestM.TakeEvent(inputEvent);
     }
 }

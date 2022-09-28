@@ -16,6 +16,9 @@ public class CardData : ScriptableObject
     public string target;
     public QuestEvent questEvent;
     public int numberOfEvents;
+    int eventCount = 0;
+    [SerializeField]
+    bool questStatus = false;
 
     // extra funcs written to override the comparison process
     public override string ToString()
@@ -40,5 +43,14 @@ public class CardData : ScriptableObject
     {
         Debug.Log("Called CardData signature .Equals()");
         return this.cardID == other.cardID;
+    }
+
+    public void IncCount(int inc = 1) { eventCount += inc; }
+    public bool CheckCompletion() { return eventCount >= numberOfEvents; }
+    public void ResetCount() { eventCount = 0; }
+    public void SetQuestStatus(bool status = true) { questStatus = status; }
+    public bool GetQuestStatus() { return questStatus; }
+    public void ApplyEffect() {     // actually add effect script to its targets
+        Debug.Log(cardID + "'s effect has been activated");
     }
 }

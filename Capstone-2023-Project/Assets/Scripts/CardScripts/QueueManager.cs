@@ -6,18 +6,13 @@ public class QueueManager : MonoBehaviour
 {
     [SerializeField]
     List<CardData> CardQueue;   // index 0 is front of queue
-    [SerializeField]
-    List<CardData> deckList;
-    [SerializeField]
-    int maxHandSize = 5;
-    [SerializeField]
-    int handListInd;
-    [SerializeField]
-    float scrollwheelScale = 0.1f;
     GameManager GM;
+    QuestManager QuestM;
 
     private void Start() {
-        GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        GameObject GMObj = GameObject.FindGameObjectWithTag("GameManager");
+        GM = GMObj.GetComponent<GameManager>();
+        QuestM = GMObj.GetComponent<QuestManager>();
     }
 
     public CardData[] GetTopThree() { 
@@ -30,6 +25,9 @@ public class QueueManager : MonoBehaviour
 
     public void ActivateFirstTwoQuests() {
         CardData[] curr_cards = GetTopThree();
+        QuestM.AddCard(curr_cards[0]);
+        QuestM.AddCard(curr_cards[1]);
+        // GM.TakeQuestEvent(curr_cards[0].)
         // call GM's quest activate function twice
     }
 
@@ -40,40 +38,15 @@ public class QueueManager : MonoBehaviour
     }
 
     public void UseCard() {
-        bool questComplete = true; // actually call GM's quest checker
-        if (questComplete) {
+        if (CardQueue[0].GetQuestStatus()) {
             // call gunManager's update card effect
+            CardQueue[0].ApplyEffect();
             PopCard();
         }
     }
 
     private void PopCard() {
+        QuestM.RemoveCard(CardQueue[0]);
         CardQueue.RemoveAt(0);
     }
-
-    // public List<CardData> GetHandList() { return handList; }
-    // public List<CardData> GetDeckList() { return deckList; }
-    // public int GetHandListInd() { return handListInd; }
-    // public CardData GetHandCard() {
-    //     if (handList.Count == 0) return null;
-    //     else return handList[handListInd];
-    // }
-    // public void RemoveCurrCard() {
-    //     if (handListInd != 0) { handListInd--; }
-    //     handList.RemoveAt(handListInd);
-    // }
-    // CardData GetDeckCard() {
-    //     int index = Random.Range(0, deckList.Count);
-    //     CardData returnObj = deckList[index];
-    //     deckList.RemoveAt(index);
-    //     return returnObj;
-    // }
-    // public void AddToHand() {
-    //     if (deckList.Count != 0) {
-    //         handList.Add(GetDeckCard());
-    //     }
-    // }
-    // public void AddToDeck(CardData newCard) {
-    //     deckList.Add(newCard);
-    // }
 }
