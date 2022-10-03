@@ -20,5 +20,5 @@ MonoBehaviour:
   effectScript: {fileID: 0}
   target: 
   questEvent: {fileID: 11400000, guid: 1c4ec949937dcdc4e839278e2d8ebec7, type: 2}
-  numberOfEvents: 2
+  numberOfEvents: 5
   questStatus: 1

@@ -5,17 +5,17 @@ using UnityEngine;
 public class QuestManager : MonoBehaviour
 {
     [SerializeField]
-    List<CardData> activeCards;
+    List<CardObj> activeCards;
 
     private void Start() {
-        activeCards = new List<CardData>();
+        activeCards = new List<CardObj>();
     }
 
     public void TakeEvent(QuestEvent newEvent) {
-        foreach (CardData currCard in activeCards) {
+        foreach (CardObj currCard in activeCards) {
             Debug.Log(currCard);
             Debug.Log(currCard.GetQuestStatus());
-            if (currCard.questEvent.Compare(newEvent)) {
+            if (currCard.GetData().questEvent.Compare(newEvent)) {
                 currCard.IncCount();
                 if (currCard.CheckCompletion()) {
                     Debug.Log(currCard.ToString() + " has been completed");
@@ -25,12 +25,12 @@ public class QuestManager : MonoBehaviour
         }
     }
 
-    void CompleteCard(CardData inputCard) {
+    void CompleteCard(CardObj inputCard) {
         inputCard.SetQuestStatus(true);
         Debug.Log("Card's new status " + inputCard.GetQuestStatus());
     }
 
-    public void AddCard(CardData inputCard) { activeCards.Add(inputCard); }
+    public void AddCard(CardObj inputCard) { activeCards.Add(inputCard); }
 
-    public void RemoveCard(CardData inputCard) { activeCards.Remove(inputCard); }
+    public void RemoveCard(CardObj inputCard) { activeCards.Remove(inputCard); }
 }
