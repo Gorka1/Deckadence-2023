@@ -11,11 +11,11 @@ public class QuestManager : MonoBehaviour
         activeCards = new List<CardObj>();
     }
 
-    public void TakeEvent(QuestEvent newEvent) {
+    public void TakeEvent(EventObj newEvent) {
         foreach (CardObj currCard in activeCards) {
             Debug.Log(currCard);
             Debug.Log(currCard.GetQuestStatus());
-            if (currCard.GetData().questEvent.Compare(newEvent)) {
+            if (newEvent.Compare(currCard.GetData().questEvent)) {
                 currCard.IncCount();
                 if (currCard.CheckCompletion()) {
                     Debug.Log(currCard.ToString() + " has been completed");

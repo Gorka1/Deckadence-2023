@@ -44,11 +44,7 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("m")) {    // create and send event
             List<string> testConditions = new List<string>();
             testConditions.Add("test");
-            QuestEvent testEvent = ScriptableObject.CreateInstance("QuestEvent") as QuestEvent;
-            testEvent.Init(
-                QuestEnums.SignalOrigin.Player,
-                testConditions
-            );
+            EventObj testEvent = new EventObj(QuestEnums.SignalOrigin.Player, testConditions);
             Debug.Log(testEvent);
             TakeQuestEvent(testEvent);
         }
@@ -77,7 +73,7 @@ public class GameManager : MonoBehaviour
         playerObj.GetComponent<PlayerMovement>().moveEnabled = true;
     }
 
-    public void TakeQuestEvent(QuestEvent inputEvent) {
+    public void TakeQuestEvent(EventObj inputEvent) {
         QuestM.TakeEvent(inputEvent);
     }
 

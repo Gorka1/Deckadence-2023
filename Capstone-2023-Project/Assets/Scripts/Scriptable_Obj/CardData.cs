@@ -14,6 +14,6 @@ public class CardData : ScriptableObject
     // card info
     public MonoBehaviour effectScript;
     public string target;
-    public QuestEvent questEvent;
+    public EventData questEvent;
     public int numberOfEvents;
 }

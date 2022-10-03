@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 
 // [System.Serializable]
-[CreateAssetMenu(fileName = "QuestEvent", menuName = "Capstone-2023-Project/QuestEvent", order = 1)]
+//[CreateAssetMenu(fileName = "QuestEvent", menuName = "Capstone-2023-Project/QuestEvent", order = 1)]
 public class QuestEvent : ScriptableObject
 {
     [SerializeField]

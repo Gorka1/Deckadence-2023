@@ -14,6 +14,7 @@ public class QueueManager : MonoBehaviour
         GameObject GMObj = GameObject.FindGameObjectWithTag("GameManager");
         GM = GMObj.GetComponent<GameManager>();
         QuestM = GMObj.GetComponent<QuestManager>();
+        CardQueue = new List<CardObj>();
         foreach(CardData currData in CardScriptableQueue) {
             CardQueue.Add(new CardObj(currData));
         }
