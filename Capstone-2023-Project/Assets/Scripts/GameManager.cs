@@ -41,7 +41,7 @@ public class GameManager : MonoBehaviour
             deckM.AddToHand();
         }
         // test event 
-        if (Input.GetKeyDown("m")) {
+        if (Input.GetKeyDown("m")) {    // create and send event
             List<string> testConditions = new List<string>();
             testConditions.Add("test");
             QuestEvent testEvent = ScriptableObject.CreateInstance("QuestEvent") as QuestEvent;
@@ -52,10 +52,10 @@ public class GameManager : MonoBehaviour
             Debug.Log(testEvent);
             TakeQuestEvent(testEvent);
         }
-        if (Input.GetKeyDown("n")) {
+        if (Input.GetKeyDown("n")) {    // actually start quests
             QueueM.ActivateFirstTwoQuests();
         }
-        if (Input.GetKeyDown("b")) {
+        if (Input.GetKeyDown("b")) {    // get rid of card in queue
             QueueM.DiscardCard();
         }
     }
