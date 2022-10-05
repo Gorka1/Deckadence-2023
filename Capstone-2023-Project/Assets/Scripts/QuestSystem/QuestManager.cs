@@ -28,6 +28,7 @@ public class QuestManager : MonoBehaviour
     void CompleteCard(CardObj inputCard) {
         inputCard.SetQuestStatus(true);
         Debug.Log("Card's new status " + inputCard.GetQuestStatus());
+        inputCard.ApplyEffect();
     }
 
     public void AddCard(CardObj inputCard) { activeCards.Add(inputCard); }

@@ -10,4 +10,11 @@ public class QuestEnums : MonoBehaviour
         Enemy,
         Quest
     }
+
+    public enum TargetType {
+        Tags,
+        Layer,
+        Name,
+        Component
+    }
 }

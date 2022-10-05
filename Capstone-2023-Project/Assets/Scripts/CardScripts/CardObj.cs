@@ -44,9 +44,40 @@ public class CardObj
     public bool CheckCompletion() { return eventCount >= Data.numberOfEvents; }
     public void ResetCount() { eventCount = 0; }
     public void SetQuestStatus(bool status = true) { questStatus = status; }
-    public bool GetQuestStatus() { Debug.Log(string.Format("QuestStatus: {0} EventCount: {1}", questStatus.ToString(), eventCount.ToString()));
-    return questStatus; }
+    public bool GetQuestStatus() { 
+        Debug.Log(string.Format("QuestStatus: {0} EventCount: {1}", questStatus.ToString(), eventCount.ToString()));
+        return questStatus;
+    }
     public void ApplyEffect() {     // actually add effect script to its targets
         Debug.Log(Data.cardID + "'s effect has been activated");
+        GameObject[] foundCards = GetTargets();
+        for (int i = 0; i < foundCards.Length; i++) {
+
+            // MonoBehaviour MB = foundCards[i].AddComponent<MonoBehaviour>() as MonoBehaviour;
+            // MB = Data.effectScript;
+            // foundCards[i].AddComponent(Data.effectScript.name);
+            // Types.GetType(Data.effectScript.name, "Assembly-CSharp.dll");
+            // foundCards[i].GetComponent<GameManager>();
+            Data.effectScript.MainEffect(foundCards[i]);
+        }
+    }
+
+    GameObject[] GetTargets() {
+        switch (Data.targetType) {
+            case QuestEnums.TargetType.Tags:
+                return GameObject.FindGameObjectsWithTag(Data.target);
+                break;
+            // case QuestEnums.TargetType.Component:
+            //     return GameObject.FindObjectsOfType(Types.GetType(Data.target, "Assembly-CSharp.dll")) as GameObject[];
+            //     break;       // Types.GetType is deprecated, figure out another way
+            case QuestEnums.TargetType.Name:
+                GameObject foundObj = GameObject.Find(Data.target);
+                GameObject[] returnArray = new GameObject[1];
+                returnArray[0] = foundObj;
+                return returnArray;
+                break;
+            default:
+                return null;
+        }
     }
 }

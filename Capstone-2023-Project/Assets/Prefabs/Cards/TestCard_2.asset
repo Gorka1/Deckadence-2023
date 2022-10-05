@@ -19,6 +19,5 @@ MonoBehaviour:
   questCode: 0
   effectScript: {fileID: 0}
   target: 
-  questEvent: {fileID: 11400000, guid: f7a386173a97d0b4c906501f1c558d8c, type: 2}
+  questEvent: {fileID: 11400000, guid: 3b5c658ef28ead946afd14bd8a6b1fca, type: 2}
   numberOfEvents: 0
-  questStatus: 0

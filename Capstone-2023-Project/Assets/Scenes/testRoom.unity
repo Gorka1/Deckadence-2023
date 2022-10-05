@@ -2459,8 +2459,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bc036755484719942bb06cef5eb665b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  CardQueue:
+  CardScriptableQueue:
   - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
   - {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
   - {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
   - {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
