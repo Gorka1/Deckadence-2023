@@ -78,5 +78,5 @@ public class GameManager : MonoBehaviour
         QuestM.TakeEvent(inputEvent);
     }
 
-
+    public Vector3 GetPlayerPos() { return playerObj.transform.position; }
 }
