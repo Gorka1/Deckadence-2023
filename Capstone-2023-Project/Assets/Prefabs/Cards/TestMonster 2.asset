@@ -1,0 +1,24 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5161160185f389e489153bf36d512b6b, type: 3}
+  m_Name: TestMonster 2
+  m_EditorClassIdentifier: 
+  cardID: 0
+  cardRank: 0
+  testWeaponColor: {r: 0, g: 0, b: 0, a: 0}
+  cardGraphic: {fileID: 0}
+  questCode: 0
+  effectScript: {fileID: 2710400633803239788, guid: a5e1d06e21f5d074da1e0e56ad6d575c, type: 3}
+  targetType: 0
+  target: Weapon
+  questEvent: {fileID: 11400000, guid: 1c7a13c683b6df94889d81e8dc4cf478, type: 2}
+  numberOfEvents: 3

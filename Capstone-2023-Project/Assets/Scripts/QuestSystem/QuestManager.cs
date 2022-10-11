@@ -13,9 +13,10 @@ public class QuestManager : MonoBehaviour
 
     public void TakeEvent(EventObj newEvent) {
         foreach (CardObj currCard in activeCards) {
-            Debug.Log(currCard);
-            Debug.Log(currCard.GetQuestStatus());
+            // Debug.Log(currCard);
+            // Debug.Log(currCard.GetQuestStatus());
             if (newEvent.Compare(currCard.GetData().questEvent)) {
+                Debug.Log("Common card found");
                 currCard.IncCount();
                 if (currCard.CheckCompletion()) {
                     Debug.Log(currCard.ToString() + " has been completed");
