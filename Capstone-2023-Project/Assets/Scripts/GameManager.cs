@@ -74,6 +74,7 @@ public class GameManager : MonoBehaviour
     }
 
     public void TakeQuestEvent(EventObj inputEvent) {
+        Debug.Log("Event inputted");
         QuestM.TakeEvent(inputEvent);
     }
 

@@ -9,9 +9,9 @@ public class BulletMovement : MonoBehaviour
     Transform origin;
     float range;
     bool set = false;
-    float damage;
+    int damage;
 
-    public void Setup(Transform o, float r, float d, float speed = 2f) {
+    public void Setup(Transform o, float r, int d, float speed = 2f) {
         origin = o;
         range = r;
         bulletSpeed = speed;
@@ -28,10 +28,16 @@ public class BulletMovement : MonoBehaviour
         }
     }
 
+    // TODO: clean this up
     private void OnCollisionEnter(Collision other) {
         TargetScript ts = other.gameObject.GetComponent<TargetScript>();
         if (ts != null) {
             ts.TakeDamage(damage);
+        } else {
+            NpcManager nm = other.gameObject.GetComponent<NpcManager>();
+            if (nm != null) {
+                nm.TakeDamage(damage);
+            }
         }
         Destroy(gameObject);
     }
