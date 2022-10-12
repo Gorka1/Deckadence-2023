@@ -15,6 +15,7 @@ public class GameManager : MonoBehaviour
     QueueManager QueueM;
     [SerializeField]
     CardData testCard;
+    bool startRun = false;
 
     private void Start() {
         playerObj = GameObject.FindGameObjectWithTag("Player");
@@ -26,20 +27,30 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (!startRun) {
+            QueueM.ActivateFirstTwoQuests();
+            startRun = true;
+        }
         if (Input.GetButtonDown("restart")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (Input.GetKeyDown("e")) {
-            // ActivateCardSelection();
-            gunM.InputCard(deckM.GetHandCard());
-            deckM.RemoveCurrCard();
+        if (Input.GetButtonDown("use card") || Input.GetKeyDown("e")) {
+            QueueM.UseCard();
         }
-        if (Input.GetKeyDown("u")) {
-            deckM.AddToDeck(testCard);
+        if (Input.GetButtonDown("discard card") || Input.GetKeyDown("q")) {
+            QueueM.DiscardCard();
         }
-        if (Input.GetKeyDown("i")) {
-            deckM.AddToHand();
-        }
+        // if (Input.GetKeyDown("e")) {
+        //     // ActivateCardSelection();
+        //     gunM.InputCard(deckM.GetHandCard());
+        //     deckM.RemoveCurrCard();
+        // }
+        // if (Input.GetKeyDown("u")) {
+        //     deckM.AddToDeck(testCard);
+        // }
+        // if (Input.GetKeyDown("i")) {
+        //     deckM.AddToHand();
+        // }
         // test event 
         if (Input.GetKeyDown("m")) {    // create and send event
             List<string> testConditions = new List<string>();
@@ -48,12 +59,12 @@ public class GameManager : MonoBehaviour
             Debug.Log(testEvent);
             TakeQuestEvent(testEvent);
         }
-        if (Input.GetKeyDown("n")) {    // actually start quests
-            QueueM.ActivateFirstTwoQuests();
-        }
-        if (Input.GetKeyDown("b")) {    // get rid of card in queue
-            QueueM.DiscardCard();
-        }
+        // if (Input.GetKeyDown("n")) {    // actually start quests
+        //     QueueM.ActivateFirstTwoQuests();
+        // }
+        // if (Input.GetKeyDown("b")) {    // get rid of card in queue
+        //     QueueM.DiscardCard();
+        // }
     }
 
     // for the individual weapons system

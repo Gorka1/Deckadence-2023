@@ -6,6 +6,7 @@ public class QueueManager : MonoBehaviour
 {
     [SerializeField]
     List<CardData> CardScriptableQueue;   // index 0 is front of queue
+    [SerializeField]
     List<CardObj> CardQueue;
     GameManager GM;
     QuestManager QuestM;
@@ -44,6 +45,7 @@ public class QueueManager : MonoBehaviour
 
     public void UseCard() {
         // call gunManager's update card effect
+        Debug.Log("UseCard() Called");
         bool result = QuestM.EngageTopCard();
         if (result) {   // only pop card if the actual top card is completed
             PopCard();
@@ -51,11 +53,20 @@ public class QueueManager : MonoBehaviour
     }
 
     private void PopCard() {
-        if (CardQueue.Count < 3) {
-            QuestM.AddCard(CardQueue[2]);   // card at index 2 is the next card
+        Debug.Log("PopCard() Called");
+        if (CardQueue.Count > 0) {
+            int index;
+            if (CardQueue.Count > 3) {
+                index = 2;
+            } else {
+                index = CardQueue.Count - 1;
+            }
+            QuestM.AddCard(CardQueue[index]);   // card at index 2 is the next card
         }
-        QuestM.RemoveCard(CardQueue[0]);
-        CardQueue.RemoveAt(0);
+        QuestM.RemoveTopCard();
+        if (CardQueue.Count != 0) {
+            CardQueue.RemoveAt(0);
+        }
     }
 
     public void AddToQueue(CardObj newCard) { CardQueue.Add(newCard); }

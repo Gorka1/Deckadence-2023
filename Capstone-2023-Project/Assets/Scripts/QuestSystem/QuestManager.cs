@@ -13,8 +13,6 @@ public class QuestManager : MonoBehaviour
 
     public void TakeEvent(EventObj newEvent) {
         foreach (CardObj currCard in activeCards) {
-            // Debug.Log(currCard);
-            // Debug.Log(currCard.GetQuestStatus());
             if (newEvent.Compare(currCard.GetData().questEvent)) {
                 Debug.Log("Common card found");
                 currCard.IncCount();
@@ -27,6 +25,7 @@ public class QuestManager : MonoBehaviour
     }
 
     public bool EngageTopCard() {
+        Debug.Log("EngageTopCard() called");
         if (activeCards[0].GetQuestStatus()) {
             ActivateCard(activeCards[0]);
             return true;
@@ -47,4 +46,5 @@ public class QuestManager : MonoBehaviour
     public void AddCard(CardObj inputCard) { activeCards.Add(inputCard); }
 
     public void RemoveCard(CardObj inputCard) { activeCards.Remove(inputCard); }
+    public void RemoveTopCard() { activeCards.RemoveAt(0); }
 }

@@ -24,11 +24,11 @@ public class EventObj
 
     // compare itself to a EventData scriptable object
     public bool Compare(EventData other) {
-        Debug.Log("Comparing Event conditions: Input Event: " 
-        + string.Join(", ", conditions) 
-        + " Quest Event: " 
-        + string.Join(", ", other.conditions));
-        Debug.Log("Input origin: " + ((int)this.origin) + " Quest origin: " + ((int)other.origin));
+        // Debug.Log("Comparing Event conditions: Input Event: " 
+        // + string.Join(", ", conditions) 
+        // + " Quest Event: " 
+        // + string.Join(", ", other.conditions));
+        // Debug.Log("Input origin: " + ((int)this.origin) + " Quest origin: " + ((int)other.origin));
         if (this.origin != other.origin) {
             return false;
         }

@@ -2505,9 +2505,9 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 428477526}
-  - component: {fileID: 428477527}
   - component: {fileID: 428477530}
   - component: {fileID: 428477529}
+  - component: {fileID: 428477527}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: GameManager
@@ -2579,6 +2579,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5d65b83689ab564e985ff4f61e73d5b, type: 2}
   - {fileID: 11400000, guid: e5d65b83689ab564e985ff4f61e73d5b, type: 2}
   - {fileID: 11400000, guid: e5d65b83689ab564e985ff4f61e73d5b, type: 2}
+  CardQueue: []
 --- !u!1001 &431855809
 PrefabInstance:
   m_ObjectHideFlags: 0
