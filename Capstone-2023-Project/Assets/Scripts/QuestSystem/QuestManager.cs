@@ -7,6 +7,8 @@ public class QuestManager : MonoBehaviour
     [SerializeField]
     List<CardObj> activeCards;
 
+    public object CardQueue { get; internal set; }
+
     private void Start() {
         activeCards = new List<CardObj>();
     }
