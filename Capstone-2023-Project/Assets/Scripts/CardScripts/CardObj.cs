@@ -52,12 +52,6 @@ public class CardObj
         Debug.Log(Data.cardID + "'s effect has been activated");
         GameObject[] foundCards = GetTargets();
         for (int i = 0; i < foundCards.Length; i++) {
-
-            // MonoBehaviour MB = foundCards[i].AddComponent<MonoBehaviour>() as MonoBehaviour;
-            // MB = Data.effectScript;
-            // foundCards[i].AddComponent(Data.effectScript.name);
-            // Types.GetType(Data.effectScript.name, "Assembly-CSharp.dll");
-            // foundCards[i].GetComponent<GameManager>();
             Data.effectScript.MainEffect(foundCards[i]);
         }
     }
@@ -66,7 +60,6 @@ public class CardObj
         switch (Data.targetType) {
             case QuestEnums.TargetType.Tags:
                 return GameObject.FindGameObjectsWithTag(Data.target);
-                break;
             // case QuestEnums.TargetType.Component:
             //     return GameObject.FindObjectsOfType(Types.GetType(Data.target, "Assembly-CSharp.dll")) as GameObject[];
             //     break;       // Types.GetType is deprecated, figure out another way
@@ -75,7 +68,6 @@ public class CardObj
                 GameObject[] returnArray = new GameObject[1];
                 returnArray[0] = foundObj;
                 return returnArray;
-                break;
             default:
                 return null;
         }

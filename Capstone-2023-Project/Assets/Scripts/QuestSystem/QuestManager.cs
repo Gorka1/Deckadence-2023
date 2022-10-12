@@ -26,9 +26,21 @@ public class QuestManager : MonoBehaviour
         }
     }
 
+    public bool EngageTopCard() {
+        if (activeCards[0].GetQuestStatus()) {
+            ActivateCard(activeCards[0]);
+            return true;
+        } else {
+            return false;
+        }
+    }
+
     void CompleteCard(CardObj inputCard) {
         inputCard.SetQuestStatus(true);
-        Debug.Log("Card's new status " + inputCard.GetQuestStatus());
+    }
+
+    void ActivateCard(CardObj inputCard) {
+        Debug.Log("CompletedCard: " + inputCard.ToString());
         inputCard.ApplyEffect();
     }
 

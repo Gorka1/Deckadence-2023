@@ -23,17 +23,17 @@ public class QueueManager : MonoBehaviour
     public CardObj[] GetTopThree() { 
         CardObj[] return_card = new CardObj[3];
         for (int i = 0; i < 3; i++) {
-            return_card[i] = CardQueue[i];
+            if (return_card.Length > i + 1) {
+                return_card[i] = CardQueue[i];
+            }
         }
         return return_card;
     }
 
     public void ActivateFirstTwoQuests() {
         CardObj[] curr_cards = GetTopThree();
-        QuestM.AddCard(curr_cards[0]);
-        QuestM.AddCard(curr_cards[1]);
-        // GM.TakeQuestEvent(curr_cards[0].)
-        // call GM's quest activate function twice
+        if (curr_cards.Length > 1) { QuestM.AddCard(curr_cards[0]); }
+        if (curr_cards.Length > 2) { QuestM.AddCard(curr_cards[1]); }
     }
 
     public void DiscardCard() {
@@ -43,14 +43,17 @@ public class QueueManager : MonoBehaviour
     }
 
     public void UseCard() {
-        if (CardQueue[0].GetQuestStatus()) {
-            // call gunManager's update card effect
-            CardQueue[0].ApplyEffect();
+        // call gunManager's update card effect
+        bool result = QuestM.EngageTopCard();
+        if (result) {   // only pop card if the actual top card is completed
             PopCard();
         }
     }
 
     private void PopCard() {
+        if (CardQueue.Count < 3) {
+            QuestM.AddCard(CardQueue[2]);   // card at index 2 is the next card
+        }
         QuestM.RemoveCard(CardQueue[0]);
         CardQueue.RemoveAt(0);
     }
