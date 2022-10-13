@@ -22,9 +22,9 @@ public class QueueManager : MonoBehaviour
     }
 
     public CardObj[] GetTopThree() { 
-        CardObj[] return_card = new CardObj[3];
+        CardObj[] return_card = new CardObj[4];
         for (int i = 0; i < 3; i++) {
-            if (return_card.Length > i + 1) {
+            if (return_card.Length > i + 1) {   // this idea doesn't work, rethink what you're doing here
                 return_card[i] = CardQueue[i];
             }
         }

@@ -5,6 +5,7 @@ using UnityEngine.UI;
 
 public class UIQueue : MonoBehaviour
 {
+    [SerializeField]
     CardObj[] cards;
     public Image[] cardsSprites;
 
@@ -24,8 +25,14 @@ public class UIQueue : MonoBehaviour
 
         for (int i = 0; i < cards.Length; i++)
         {
-            cardsSprites[i].sprite = cards[i].GetData().cardGraphic;
-            print(cards[i].GetData().cardGraphic);
+            if (cards[i] != null)
+            {
+                cardsSprites[i].sprite = cards[i].GetData().cardGraphic;
+                print(cards[i].GetData().cardGraphic);
+            }
         }
+        // if there's a positive diff btwn cardsSprites.length - cards.length (n)
+        // then there are less than 3 cards in the whole queue
+        // you have to clear the sprite of the last n image in cardsSprites
     }
 }
