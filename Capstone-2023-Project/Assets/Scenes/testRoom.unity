@@ -2711,6 +2711,14 @@ PrefabInstance:
       value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 6701475015371736358, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
+      propertyPath: baseSpeed
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701475015371736358, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
+      propertyPath: slideSpeed
+      value: 40
+      objectReference: {fileID: 0}
+    - target: {fileID: 6701475015371736358, guid: bed46af9450fd8348ba830dd836496d5, type: 3}
       propertyPath: momentumText
       value: 
       objectReference: {fileID: 1101219042}
