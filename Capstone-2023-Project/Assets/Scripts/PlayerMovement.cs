@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 // basic fps movement, taken from brackeys video
 public class PlayerMovement : MonoBehaviour
@@ -42,11 +43,22 @@ public class PlayerMovement : MonoBehaviour
     Text momentumText;
     public bool moveEnabled = true;
 
+
     void Update()
     {
         if (moveEnabled) {
             UpdateMovement();
-        }   
+        }
+
+        if (Input.GetKeyDown(KeyCode.O))
+        {
+            SceneManager.LoadScene("testRoom");
+        }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            SceneManager.LoadScene("Level1 Test");
+        }
     }
 
     void UpdateMovement() {
