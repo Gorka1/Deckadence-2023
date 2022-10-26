@@ -11,12 +11,10 @@ public class CardData : ScriptableObject
     public Color testWeaponColor;      // placeholder for testing
     public Sprite cardGraphic;
     public Dictionary<string, string> changesDict;
-    public int questCode;
     // card info
+    public CardEnums.CardRarity rarity;
     public AbstractEffect effectScript;
     public delegate void effectFunc();
     public CardEnums.TargetType targetType;
     public string target;
-    public EventData questEvent;
-    public int numberOfEvents;
 }
