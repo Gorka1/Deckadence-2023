@@ -5,29 +5,41 @@ using UnityEngine;
 public class DeckManager : MonoBehaviour
 {
     [SerializeField]
-    List<CardData> handList;
+    List<CardObj> handList;
     [SerializeField]
-    List<CardData> deckList;
+    List<CardObj> deckList;
+    [SerializeField]
+    List<CardObj> discardList;
     [SerializeField]
     int maxHandSize = 5;
     [SerializeField]
     int handListInd;
-    [SerializeField]
-    float scrollwheelScale = 0.1f;
 
-    private void Update() {
-        float currScollInput = Input.mouseScrollDelta.y * scrollwheelScale;
-        if (currScollInput > .5f && handListInd < handList.Count - 1) {
-            handListInd++;
-        } else if (currScollInput < -.5f && handListInd > 0) {
-            handListInd--;
+    private void Start() {
+        handList = new List<CardObj>(4);
+        for (int i = 0; i < 4; i++) {
+            handList[i] = GetDeckCard();
         }
     }
 
-    public List<CardData> GetHandList() { return handList; }
-    public List<CardData> GetDeckList() { return deckList; }
+    private void Update() {
+        // float currScollInput = Input.mouseScrollDelta.y * scrollwheelScale;
+        // if (currScollInput > .5f && handListInd < handList.Count - 1) {
+        //     handListInd++;
+        // } else if (currScollInput < -.5f && handListInd > 0) {
+        //     handListInd--;
+        // }
+        if (deckList.Count == 0) {
+            DiscardToDeck();
+        }
+    }
+
+    public List<CardObj> GetHandList() { return handList; }
+    public List<CardObj> GetDeckList() { return deckList; }
+    public List<CardObj> GetDiscardList() { return discardList; }
     public int GetHandListInd() { return handListInd; }
-    public CardData GetHandCard() {
+    public void SetHandInd(int newVal) { handListInd = newVal; }
+    public CardObj GetHandCard() {
         if (handList.Count == 0) return null;
         else return handList[handListInd];
     }
@@ -35,18 +47,27 @@ public class DeckManager : MonoBehaviour
         if (handListInd != 0) { handListInd--; }
         handList.RemoveAt(handListInd);
     }
-    CardData GetDeckCard() {
+    CardObj GetDeckCard() {
         int index = Random.Range(0, deckList.Count);
-        CardData returnObj = deckList[index];
+        CardObj returnObj = deckList[index];
         deckList.RemoveAt(index);
         return returnObj;
     }
-    public void AddToHand() {
-        if (deckList.Count != 0) {
-            handList.Add(GetDeckCard());
+    void DiscardToDeck() {
+        if (deckList.Count == 0) {
+            deckList = new List<CardObj>(discardList);
+            discardList.Clear();
         }
     }
-    public void AddToDeck(CardData newCard) {
+    public void AddToHand(int position) {
+        if (deckList.Count != 0) {
+            handList[position] = GetDeckCard();
+        }
+    }
+    public void AddToDeck(CardObj newCard) {
         deckList.Add(newCard);
+    }
+    void AddToDiscard(CardObj newCard) {
+        discardList.Add(newCard);
     }
 }
