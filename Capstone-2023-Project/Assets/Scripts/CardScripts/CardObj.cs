@@ -58,12 +58,12 @@ public class CardObj
 
     GameObject[] GetTargets() {
         switch (Data.targetType) {
-            case QuestEnums.TargetType.Tags:
+            case CardEnums.TargetType.Tags:
                 return GameObject.FindGameObjectsWithTag(Data.target);
-            // case QuestEnums.TargetType.Component:
+            // case CardEnums.TargetType.Component:
             //     return GameObject.FindObjectsOfType(Types.GetType(Data.target, "Assembly-CSharp.dll")) as GameObject[];
             //     break;       // Types.GetType is deprecated, figure out another way
-            case QuestEnums.TargetType.Name:
+            case CardEnums.TargetType.Name:
                 GameObject foundObj = GameObject.Find(Data.target);
                 GameObject[] returnArray = new GameObject[1];
                 returnArray[0] = foundObj;

@@ -15,7 +15,7 @@ public class CardData : ScriptableObject
     // card info
     public AbstractEffect effectScript;
     public delegate void effectFunc();
-    public QuestEnums.TargetType targetType;
+    public CardEnums.TargetType targetType;
     public string target;
     public EventData questEvent;
     public int numberOfEvents;
