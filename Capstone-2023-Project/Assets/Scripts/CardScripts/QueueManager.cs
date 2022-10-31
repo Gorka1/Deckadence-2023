@@ -33,8 +33,8 @@ public class QueueManager : MonoBehaviour
 
     public void ActivateFirstTwoQuests() {
         CardObj[] curr_cards = GetTopThree();
-        if (curr_cards.Length > 1) { QuestM.AddCard(curr_cards[0]); }
-        if (curr_cards.Length > 2) { QuestM.AddCard(curr_cards[1]); }
+        // if (curr_cards.Length > 1) { QuestM.AddCard(curr_cards[0]); }
+        // if (curr_cards.Length > 2) { QuestM.AddCard(curr_cards[1]); }
     }
 
     public void DiscardCard() {
@@ -46,27 +46,27 @@ public class QueueManager : MonoBehaviour
     public void UseCard() {
         // call gunManager's update card effect
         Debug.Log("UseCard() Called");
-        bool result = QuestM.EngageTopCard();
-        if (result) {   // only pop card if the actual top card is completed
-            PopCard();
-        }
+        // bool result = QuestM.EngageTopCard();
+        // if (result) {   // only pop card if the actual top card is completed
+        //     PopCard();
+        // }
     }
 
     private void PopCard() {
-        Debug.Log("PopCard() Called");
-        if (CardQueue.Count > 0) {
-            int index;
-            if (CardQueue.Count > 3) {
-                index = 2;
-            } else {
-                index = CardQueue.Count - 1;
-            }
-            QuestM.AddCard(CardQueue[index]);   // card at index 2 is the next card
-        }
-        QuestM.RemoveTopCard();
-        if (CardQueue.Count != 0) {
-            CardQueue.RemoveAt(0);
-        }
+        // Debug.Log("PopCard() Called");
+        // if (CardQueue.Count > 0) {
+        //     int index;
+        //     if (CardQueue.Count > 3) {
+        //         index = 2;
+        //     } else {
+        //         index = CardQueue.Count - 1;
+        //     }
+        //     QuestM.AddCard(CardQueue[index]);   // card at index 2 is the next card
+        // }
+        // QuestM.RemoveTopCard();
+        // if (CardQueue.Count != 0) {
+        //     CardQueue.RemoveAt(0);
+        // }
     }
 
     public void AddToQueue(CardObj newCard) { CardQueue.Add(newCard); }

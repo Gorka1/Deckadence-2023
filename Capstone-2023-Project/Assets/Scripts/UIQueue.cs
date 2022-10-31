@@ -35,15 +35,15 @@ public class UIQueue : MonoBehaviour
             if (cards[i] != null)
             {
                 cardsSprites[i].sprite = cards[i].GetData().cardGraphic;
-                if (cards[i].GetQuestStatus()) {
-                    cardsSprites[i].gameObject.GetComponent<RectTransform>().SetPositionAndRotation(
-                        new Vector3(SpriteStartPos[i].x, SpriteStartPos[i].y + CardYShift, SpriteStartPos[i].z),
-                        Quaternion.identity);
-                } else {
-                    cardsSprites[i].gameObject.GetComponent<RectTransform>().SetPositionAndRotation(
-                        SpriteStartPos[i],
-                        Quaternion.identity);
-                }
+                // if (cards[i].GetQuestStatus()) {
+                //     cardsSprites[i].gameObject.GetComponent<RectTransform>().SetPositionAndRotation(
+                //         new Vector3(SpriteStartPos[i].x, SpriteStartPos[i].y + CardYShift, SpriteStartPos[i].z),
+                //         Quaternion.identity);
+                // } else {
+                //     cardsSprites[i].gameObject.GetComponent<RectTransform>().SetPositionAndRotation(
+                //         SpriteStartPos[i],
+                //         Quaternion.identity);
+                // }
                 print(cards[i].GetData().cardGraphic);
             }
         }
