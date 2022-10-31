@@ -6,6 +6,8 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     [SerializeField]
+    List<CardData> masterDeckList;
+    [SerializeField]
     List<GameObject> buttons;
     GameObject playerObj;
     [SerializeField]
@@ -86,7 +88,7 @@ public class GameManager : MonoBehaviour
 
     public void TakeQuestEvent(EventObj inputEvent) {
         Debug.Log("Event inputted, conditions: " + string.Join(", ", inputEvent.GetConditions()));
-        QuestM.TakeEvent(inputEvent);
+        // QuestM.TakeEvent(inputEvent);
     }
 
     public Vector3 GetPlayerPos() { return playerObj.transform.position; }

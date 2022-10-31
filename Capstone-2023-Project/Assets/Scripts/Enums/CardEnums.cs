@@ -16,4 +16,10 @@ public class CardEnums
         Name,
         Component
     }
+
+    public enum CardRarity {
+        Simple,
+        Adequate,
+        Elite
+    }
 }

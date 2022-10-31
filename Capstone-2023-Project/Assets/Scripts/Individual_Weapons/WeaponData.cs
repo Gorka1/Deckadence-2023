@@ -9,6 +9,7 @@ public class WeaponData
     public float fireRate = 0;
     public bool projectilePresent = false;
     public string fireType;
+    public int maxEffects = 5;
 
     public static WeaponData CreateFromJSON(string inputJson) {
         return JsonUtility.FromJson<WeaponData>(inputJson);
