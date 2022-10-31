@@ -4,14 +4,29 @@ using UnityEngine;
 
 public abstract class AbstractEffect : MonoBehaviour
 {
-    public abstract void MainEffect(GameObject GO);
-    public abstract void UndoEffect(GameObject GO);
+    [SerializeField]
+    float time = 5f;
+    bool testCombat = true;
+    bool active = false;        // is this even needed
+
+    private void Update() {
+        if (testCombat && !active) {
+            MainEffect();
+            Wait();
+            active = true;
+            Destroy(this);
+        }
+    }
+
+    public abstract void MainEffect();
+    public abstract void UndoEffect();
     public void Wait() {
         StartCoroutine(WaitCoroutine());
     }
 
     IEnumerator WaitCoroutine() {
-        yield return new WaitForSeconds(5);     // get wait settings
+        yield return new WaitForSeconds(time);     // get wait settings
+        UndoEffect();
         // call UndoEffect
     }
 }

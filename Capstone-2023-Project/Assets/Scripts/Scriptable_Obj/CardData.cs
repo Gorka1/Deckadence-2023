@@ -14,6 +14,7 @@ public class CardData : ScriptableObject
     // card info
     public CardEnums.CardRarity rarity;
     public AbstractEffect effectScript;
+    public GameObject effectObj;
     public delegate void effectFunc();
     public CardEnums.TargetType targetType;
     public string target;

@@ -42,7 +42,8 @@ public class CardObj
         Debug.Log(Data.cardID + "'s effect has been activated");
         GameObject[] foundCards = GetTargets();
         for (int i = 0; i < foundCards.Length; i++) {
-            Data.effectScript.MainEffect(foundCards[i]);
+            // Data.effectScript.MainEffect(foundCards[i]);
+            GameObject.Instantiate(Data.effectObj, foundCards[i].transform);
         }
     }
 
@@ -58,6 +59,10 @@ public class CardObj
                 GameObject[] returnArray = new GameObject[1];
                 returnArray[0] = foundObj;
                 return returnArray;
+            // case CardEnums.TargetType.Gun:       // add a ref to current gun
+            //     GameObject[] gunArray = new GameObject[1];
+            //     gunArray[0] = ;
+            //     return gunArray;
             default:
                 return null;
         }

@@ -14,7 +14,8 @@ public class CardEnums
         Tags,
         Layer,
         Name,
-        Component
+        Component,
+        Gun
     }
 
     public enum CardRarity {
