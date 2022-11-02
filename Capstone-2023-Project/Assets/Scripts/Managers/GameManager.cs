@@ -15,6 +15,8 @@ public class GameManager : MonoBehaviour
     DeckManager deckM;
     [SerializeField]
     CardData testCard;
+    [SerializeField]
+    GameObject testGun;
     bool startRun = false;
 
     private void Start() {
@@ -32,6 +34,9 @@ public class GameManager : MonoBehaviour
         // }
         if (Input.GetButtonDown("restart")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+        }
+        if (Input.GetKeyDown("e")) {
+            WM.AddWeapon(testGun);
         }
         // if (Input.GetButtonDown("use card") || Input.GetKeyDown("e")) {
         //     QueueM.UseCard();

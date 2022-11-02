@@ -349,3 +349,4 @@ MonoBehaviour:
   weaponPoint: {fileID: 0}
   ammoCounterText: {fileID: 0}
   weaponListText: {fileID: 0}
+  scrollwheelScale: 0.3

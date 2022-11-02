@@ -96,7 +96,7 @@ public class PlayerMovement : MonoBehaviour
         controller.Move(velocity * Time.deltaTime);
 
         // demo screen print
-        momentumText.text = "Momentum: " + momentum;
+        // momentumText.text = "Momentum: " + momentum;
     }
 
     Vector3 GetInputDirection() {

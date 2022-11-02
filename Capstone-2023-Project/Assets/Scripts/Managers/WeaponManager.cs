@@ -48,12 +48,12 @@ public class WeaponManager : MonoBehaviour
         //     }
         // }
         // demo screen prints
-        ammoCounterText.text = "Ammo: " + ammoCount;
-        string tempString = "";
-        for (int i = currindex - 1; i < weaponInventory.Count; i++) {
-            tempString += weaponInventory[i].name + " ";
-        }
-        weaponListText.text = "Weapons: " + tempString;
+        // ammoCounterText.text = "Ammo: " + ammoCount;
+        // string tempString = "";
+        // for (int i = currindex - 1; i < weaponInventory.Count; i++) {
+        //     tempString += weaponInventory[i].name + " ";
+        // }
+        // weaponListText.text = "Weapons: " + tempString;
     }
 
     public List<GunStatusReport> GetGunStatus() {

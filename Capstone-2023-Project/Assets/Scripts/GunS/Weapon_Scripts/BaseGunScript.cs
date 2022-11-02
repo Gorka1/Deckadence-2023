@@ -14,8 +14,7 @@ public abstract class BaseGunScript : MonoBehaviour
     bool gameEnabled = false;
 
     protected virtual void Start() {
-        WM = GameObject.Find("PlayerObject").GetComponent<WeaponManager>();
-        firePoint = this.transform.parent.transform.Find("FirePoint").gameObject;
+        WM = GameObject.FindGameObjectWithTag("WeaponManager").GetComponent<WeaponManager>();
     }
 
     void Update() {

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TargetScript : MonoBehaviour
 {
+    [SerializeField]
     float health = 100;
     [SerializeField]
     float DamageModifier = 1;
