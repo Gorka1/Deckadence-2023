@@ -66,6 +66,8 @@ public class WeaponManager : MonoBehaviour
 
     public int CurrInd() { return currindex; }
 
+    public GameObject GetCurrGun() { return weaponInventory[currindex]; }
+
     private void SetWeaponAtInd(int ind, bool status) {
         weaponInventory[ind].GetComponent<BaseGunScript>().SetGameEnabled(status);
     }

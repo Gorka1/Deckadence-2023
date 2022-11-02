@@ -59,10 +59,10 @@ public class CardObj
                 GameObject[] returnArray = new GameObject[1];
                 returnArray[0] = foundObj;
                 return returnArray;
-            // case CardEnums.TargetType.Gun:       // add a ref to current gun
-            //     GameObject[] gunArray = new GameObject[1];
-            //     gunArray[0] = ;
-            //     return gunArray;
+            case CardEnums.TargetType.Gun:       // add a ref to current gun
+                GameObject[] gunArray = new GameObject[1];
+                gunArray[0] = GameObject.FindGameObjectWithTag("WeaponManager").GetComponent<WeaponManager>().GetCurrGun();
+                return gunArray;
             default:
                 return null;
         }

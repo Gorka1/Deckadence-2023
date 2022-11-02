@@ -7,7 +7,7 @@ public class DeckManager : MonoBehaviour
     [SerializeField]
     List<CardData> deckList;
     [SerializeField]
-    List<CardData> handList;
+    List<CardData> handList = new List<CardData>(4);
     [SerializeField]
     List<CardData> internalDeckList;
     [SerializeField]
@@ -22,7 +22,7 @@ public class DeckManager : MonoBehaviour
     }
 
     public void Init() {
-        handList = new List<CardData>(4);
+        // handList = new List<CardData>(4);
         for (int i = 0; i < 4; i++) {
             handList[i] = GetDeckCard();
         }
@@ -55,6 +55,9 @@ public class DeckManager : MonoBehaviour
         handList.RemoveAt(handListInd);
     }
     CardData GetDeckCard() {
+        if (internalDeckList.Count == 0) {
+            return null;
+        }
         int index = Random.Range(0, internalDeckList.Count);
         CardData returnObj = internalDeckList[index];
         internalDeckList.RemoveAt(index);
@@ -76,5 +79,11 @@ public class DeckManager : MonoBehaviour
     }
     void AddToDiscard(CardData newCard) {
         discardList.Add(newCard);
+    }
+
+    public void UseCurrCard() {
+        CardData currCardData = handList[handListInd];
+        CardObj currCardObj = new CardObj(currCardData);
+        currCardObj.ApplyEffect();
     }
 }

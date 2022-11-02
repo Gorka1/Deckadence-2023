@@ -32,11 +32,17 @@ public class GameManager : MonoBehaviour
         //     QueueM.ActivateFirstTwoQuests();
         //     startRun = true;
         // }
+        if (Input.GetKeyDown("f")) {    // start the deck system
+            deckM.Init();
+        }
         if (Input.GetButtonDown("restart")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (Input.GetKeyDown("e")) {
+        if (Input.GetKeyDown("e")) {        // add a gun to the weapon manager
             WM.AddWeapon(testGun);
+        }
+        if (Input.GetKeyDown("q")) {        // activate a card
+            deckM.UseCurrCard();
         }
         // if (Input.GetButtonDown("use card") || Input.GetKeyDown("e")) {
         //     QueueM.UseCard();
@@ -56,13 +62,13 @@ public class GameManager : MonoBehaviour
         //     deckM.AddToHand();
         // }
         // test event 
-        if (Input.GetKeyDown("m")) {    // create and send event
-            List<string> testConditions = new List<string>();
-            testConditions.Add("test");
-            EventObj testEvent = new EventObj(QuestEnums.SignalOrigin.Player, testConditions);
-            Debug.Log(testEvent);
-            TakeQuestEvent(testEvent);
-        }
+        // if (Input.GetKeyDown("m")) {    // create and send event
+        //     List<string> testConditions = new List<string>();
+        //     testConditions.Add("test");
+        //     EventObj testEvent = new EventObj(QuestEnums.SignalOrigin.Player, testConditions);
+        //     Debug.Log(testEvent);
+        //     TakeQuestEvent(testEvent);
+        // }
         // if (Input.GetKeyDown("n")) {    // actually start quests
         //     QueueM.ActivateFirstTwoQuests();
         // }
