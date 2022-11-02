@@ -12,5 +12,6 @@ public class GunStats
     public int ammo = 0;
     public float speed = 0f;
     public float critChance = 0f;
-    public float critBonus = 0f;
+    public float critBonus = 200f;
+    public float spread = 0f;
 }
