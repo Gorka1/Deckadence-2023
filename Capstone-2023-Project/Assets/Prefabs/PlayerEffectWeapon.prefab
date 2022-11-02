@@ -394,10 +394,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: dbb297198a8c97249bc1df7f60577c93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gunStats: {fileID: 0}
+  gunStats:
+    dmg: 0
+    fireRate: 0
+    fireType: basic
+    range: 0
+    automatic: 0
+    ammo: 0
+    speed: 0
   firePoint: {fileID: 1479536690878375115}
   projectileObj: {fileID: 0}
   ammoCount: 0
+  gunModel: {fileID: 0}
 --- !u!1001 &6983065448522934624
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -452,6 +460,10 @@ PrefabInstance:
     - target: {fileID: 3505449482831923185, guid: c57356708b98b3a43aa1887fc5272204, type: 3}
       propertyPath: m_Name
       value: TestGun1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3505449482831923185, guid: c57356708b98b3a43aa1887fc5272204, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c57356708b98b3a43aa1887fc5272204, type: 3}

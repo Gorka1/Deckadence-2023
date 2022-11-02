@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class SingleShotScript : BaseGunScript
+public class SingleShot : BaseGunScript
 {
     public override void FireEvent() {
         Debug.Log("Single Shot Firing");

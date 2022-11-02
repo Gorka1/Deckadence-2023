@@ -6,10 +6,10 @@ public class IncreaseDamage : AbstractEffect
 {
     [SerializeField]
     int value = 1;
-    GunManager GM;
+    BaseGunScript GM;
     public override void MainEffect() {
         Debug.Log("Increased damage to: " + this.transform.parent.name);
-        GM = this.GetComponentInParent<GunManager>();
+        GM = this.GetComponentInParent<BaseGunScript>();
         if (GM != null) {
             GM.gunStats.dmg += value;
         }

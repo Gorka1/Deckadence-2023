@@ -6,10 +6,10 @@ public class ChangeFirerate : AbstractEffect
 {
     [SerializeField]
     float value = 1f;
-    GunManager GM;
+    BaseGunScript GM;
     public override void MainEffect() {
         Debug.Log("Firerate changed to: " + this.transform.parent.name);
-        GM = this.GetComponentInParent<GunManager>();
+        GM = this.GetComponentInParent<BaseGunScript>();
         if (GM != null) {
             GM.gunStats.fireRate += value;
         }

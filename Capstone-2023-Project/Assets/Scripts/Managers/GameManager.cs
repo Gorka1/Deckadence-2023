@@ -11,7 +11,7 @@ public class GameManager : MonoBehaviour
     List<GameObject> buttons;
     GameObject playerObj;
     [SerializeField]
-    GunManager gunM;
+    WeaponManager WM;
     DeckManager deckM;
     QuestManager QuestM;
     QueueManager QueueM;

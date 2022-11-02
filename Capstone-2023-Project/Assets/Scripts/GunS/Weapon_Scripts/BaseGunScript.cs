@@ -6,21 +6,20 @@ public abstract class BaseGunScript : MonoBehaviour
 {
     public GameObject firePoint;
     public WeaponObj weaponObject;
+    public GunStats gunStats;
     [SerializeField]
     protected WeaponDataObj weaponData;
-    protected GameObject projectileObj;
     protected WeaponManager WM;
     private float nextTimeToFire = 0f;
 
-    private void Start() {
+    protected virtual void Start() {
         WM = GameObject.Find("PlayerObject").GetComponent<WeaponManager>();
         firePoint = this.transform.parent.transform.Find("FirePoint").gameObject;
         weaponData = WeaponDataObj.CreateFromJSON(weaponObject.jsonData.text);
-        projectileObj = weaponObject.projectile;
     }
 
     void Update() {
-        bool inputRegistered = false;
+        bool inputRegistered;
 
         if (weaponData.automatic) {
             inputRegistered = Input.GetButton("Fire1");
