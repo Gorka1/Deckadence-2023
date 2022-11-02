@@ -87,6 +87,7 @@ MonoBehaviour:
     speed: 0
     critChance: 0
     critBonus: 0
+    spread: 0
   gunData:
     cardIcon: {fileID: 0}
 --- !u!1 &7313151654944753569
