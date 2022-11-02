@@ -11,7 +11,7 @@ public abstract class BaseGunScript : MonoBehaviour
     protected GameObject gunModel;
     protected WeaponManager WM;
     private float nextTimeToFire = 0f;
-    bool gameEnabled = true;
+    bool gameEnabled = false;
 
     protected virtual void Start() {
         WM = GameObject.Find("PlayerObject").GetComponent<WeaponManager>();

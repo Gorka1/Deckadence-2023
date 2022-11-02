@@ -24,21 +24,29 @@ public class WeaponManager : MonoBehaviour
     Text ammoCounterText;
     [SerializeField]
     Text weaponListText;
+    [SerializeField]
+    float scrollwheelScale;
 
     private void Start() {
         SetupPlayer();
     }
 
     private void Update() {
-        // swap weapons if there are more weapons in the list, else just unarm player
-        if (ammoCount <= 0) {
-            if (currindex >= weaponInventory.Count) {
-                Destroy(currWeapon);
-            } else {
-                SetWeapon(weaponInventory[currindex]);
-                currindex++;
-            }
+        float currScollInput = Input.mouseScrollDelta.y * scrollwheelScale;
+        if (currScollInput > .5f && currindex < weaponInventory.Count - 1) {
+            ChangeWeapon(1);
+        } else if (currScollInput < -.5f && currindex > 0) {
+            ChangeWeapon(-1);
         }
+        // swap weapons if there are more weapons in the list, else just unarm player
+        // if (ammoCount <= 0) {
+        //     if (currindex >= weaponInventory.Count) {
+        //         Destroy(currWeapon);
+        //     } else {
+        //         SetWeapon(weaponInventory[currindex]);
+        //         currindex++;
+        //     }
+        // }
         // demo screen prints
         ammoCounterText.text = "Ammo: " + ammoCount;
         string tempString = "";
@@ -58,24 +66,29 @@ public class WeaponManager : MonoBehaviour
 
     public int CurrInd() { return currindex; }
 
-    private void SetWeapon(GameObject newWeapon) {
-        // Destroy(currWeapon);
-        // BaseGunScript gunScript = newWeapon.GetComponent<BaseGunScript>();
-        // weaponObj = gunScript.GetWeaponObj();
-        // ammoCount = WeaponDataObj.CreateFromJSON(weaponObj.jsonData.text).ammo;
-        // currWeapon = Instantiate(newWeapon, weaponPoint.transform);
+    private void SetWeaponAtInd(int ind, bool status) {
+        weaponInventory[ind].GetComponent<BaseGunScript>().SetGameEnabled(status);
+    }
+
+    private void ChangeWeapon(int indChange) {
+        SetWeaponAtInd(currindex, false);
+        currindex += indChange;
+        SetWeaponAtInd(currindex, true);
     }
 
     public void SetupPlayer() {
         currindex = 0;
         if (weaponInventory.Count != 0) {
-            SetWeapon(weaponInventory[currindex]);
-            currindex++;
+            SetWeaponAtInd(currindex, true);
         }
     }
 
+    // take in prefab to add to weapon list
     public void AddWeapon(GameObject newWeapon) {
-        weaponInventory.Add(newWeapon);
+        weaponInventory.Add(Instantiate(newWeapon, this.transform));
+        if (weaponInventory.Count == 1) {
+            SetWeaponAtInd(currindex, true);
+        }
     }
 
     public void UpdateAmmo() {
