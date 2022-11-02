@@ -9,7 +9,7 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1999972169740184439}
-  - component: {fileID: 8902786652492841430}
+  - component: {fileID: 1537142080620533559}
   m_Layer: 0
   m_Name: NewTestGun 1
   m_TagString: Untagged
@@ -33,7 +33,7 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 90, y: 0, z: 0}
---- !u!114 &8902786652492841430
+--- !u!114 &1537142080620533559
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -58,14 +58,6 @@ MonoBehaviour:
     critBonus: 0
   gunData:
     cardIcon: {fileID: 0}
-  weaponData:
-    dmg: 0
-    fireRate: 0
-    projectilePresent: 0
-    fireType: basic
-    range: 0
-    automatic: 0
-    ammo: 0
 --- !u!1 &7313151654944753569
 GameObject:
   m_ObjectHideFlags: 0

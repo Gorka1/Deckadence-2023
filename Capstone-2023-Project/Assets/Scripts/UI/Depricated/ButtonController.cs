@@ -7,15 +7,15 @@ public class ButtonController : MonoBehaviour
 {
     [SerializeField]
     GameObject weapon;
-    WeaponObj weaponObj;
+    GunData gunData;
     GameManager GM;
     GameObject player;
 
     // Start is called before the first frame update
     void Start()
     {
-        weaponObj = weapon.GetComponent<BaseGunScript>().GetWeaponObj();
-        this.GetComponent<Image>().sprite = weaponObj.cardIcon;
+        gunData = weapon.GetComponent<BaseGunScript>().gunData;
+        this.GetComponent<Image>().sprite = gunData.cardIcon;
         GM = GameObject.Find("GameManager").GetComponent<GameManager>();
         player = GameObject.Find("PlayerObject");
         // this.GetComponent<Button>().set = OnClickEvent;
