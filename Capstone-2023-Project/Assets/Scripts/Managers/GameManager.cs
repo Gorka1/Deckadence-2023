@@ -13,35 +13,32 @@ public class GameManager : MonoBehaviour
     [SerializeField]
     WeaponManager WM;
     DeckManager deckM;
-    QuestManager QuestM;
-    QueueManager QueueM;
     [SerializeField]
     CardData testCard;
     bool startRun = false;
 
     private void Start() {
         playerObj = GameObject.FindGameObjectWithTag("Player");
+        WM = GameObject.FindGameObjectWithTag("WeaponManager").GetComponent<WeaponManager>();
         deckM = this.GetComponent<DeckManager>();
-        QuestM = this.GetComponent<QuestManager>();
-        QueueM = this.GetComponent<QueueManager>();
     }
 
     // Update is called once per frame
     void Update()
     {
-        if (!startRun) {
-            QueueM.ActivateFirstTwoQuests();
-            startRun = true;
-        }
+        // if (!startRun) {
+        //     QueueM.ActivateFirstTwoQuests();
+        //     startRun = true;
+        // }
         if (Input.GetButtonDown("restart")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (Input.GetButtonDown("use card") || Input.GetKeyDown("e")) {
-            QueueM.UseCard();
-        }
-        if (Input.GetButtonDown("discard card") || Input.GetKeyDown("q")) {
-            QueueM.DiscardCard();
-        }
+        // if (Input.GetButtonDown("use card") || Input.GetKeyDown("e")) {
+        //     QueueM.UseCard();
+        // }
+        // if (Input.GetButtonDown("discard card") || Input.GetKeyDown("q")) {
+        //     QueueM.DiscardCard();
+        // }
         // if (Input.GetKeyDown("e")) {
         //     // ActivateCardSelection();
         //     gunM.InputCard(deckM.GetHandCard());
@@ -69,6 +66,8 @@ public class GameManager : MonoBehaviour
         // }
     }
 
+    public DeckManager GetDeckM() { return deckM; }
+    public WeaponManager GetWeaponM() { return WM; }
     // for the individual weapons system
     public void ActivateCardSelection() {
         Cursor.lockState = CursorLockMode.Confined;

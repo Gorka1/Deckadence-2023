@@ -48,6 +48,16 @@ public class WeaponManager : MonoBehaviour
         weaponListText.text = "Weapons: " + tempString;
     }
 
+    public List<GunStatusReport> GetGunStatus() {
+        List<GunStatusReport> returnList = new List<GunStatusReport>(weaponInventory.Count);
+        foreach (GameObject gun in weaponInventory) {
+            returnList.Add(gun.GetComponent<BaseGunScript>().GetReport());
+        }
+        return returnList;
+    }
+
+    public int CurrInd() { return currindex; }
+
     private void SetWeapon(GameObject newWeapon) {
         // Destroy(currWeapon);
         // BaseGunScript gunScript = newWeapon.GetComponent<BaseGunScript>();

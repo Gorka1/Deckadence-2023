@@ -31,5 +31,15 @@ public abstract class BaseGunScript : MonoBehaviour
         }
     }
 
+    public GunStatusReport GetReport() {
+        GunStatusReport returnData = new GunStatusReport();
+        foreach (GameObject child in transform) {
+            if (child.CompareTag("Effect")) {
+                returnData.effectData.Add(child.GetComponent<AbstractEffect>().GetReport());
+            }
+        }
+        return returnData;
+    }
+
     public abstract void FireEvent();
 }  

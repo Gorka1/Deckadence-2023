@@ -6,6 +6,10 @@ public abstract class AbstractEffect : MonoBehaviour
 {
     [SerializeField]
     float time = 5f;
+    [SerializeField]
+    Sprite icon;
+    [SerializeField]
+    string name = "";
     bool testCombat = true;
     bool active = false;        // is this even needed
 
@@ -16,6 +20,10 @@ public abstract class AbstractEffect : MonoBehaviour
             active = true;
             Destroy(this);
         }
+    }
+
+    public EffectData GetReport() {
+        return new EffectData(icon, name, time);
     }
 
     public abstract void MainEffect();
