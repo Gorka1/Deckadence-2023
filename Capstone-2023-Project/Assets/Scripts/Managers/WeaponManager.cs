@@ -49,11 +49,11 @@ public class WeaponManager : MonoBehaviour
     }
 
     private void SetWeapon(GameObject newWeapon) {
-        Destroy(currWeapon);
-        BaseGunScript gunScript = newWeapon.GetComponent<BaseGunScript>();
-        weaponObj = gunScript.GetWeaponObj();
-        ammoCount = WeaponDataObj.CreateFromJSON(weaponObj.jsonData.text).ammo;
-        currWeapon = Instantiate(newWeapon, weaponPoint.transform);
+        // Destroy(currWeapon);
+        // BaseGunScript gunScript = newWeapon.GetComponent<BaseGunScript>();
+        // weaponObj = gunScript.GetWeaponObj();
+        // ammoCount = WeaponDataObj.CreateFromJSON(weaponObj.jsonData.text).ammo;
+        // currWeapon = Instantiate(newWeapon, weaponPoint.transform);
     }
 
     public void SetupPlayer() {
