@@ -11,7 +11,6 @@ public class SingleShotProjectile : BaseGunScript
 
     private new void Start() {
         base.Start();
-        projectileObj = weaponObject.projectile;
     }
 
     public override void FireEvent() {

@@ -12,12 +12,12 @@ public class SingleShot : BaseGunScript
             firePoint.transform.position,
             firePoint.transform.forward,
             out hit,
-            weaponData.range
+            gunStats.range
             )) {
             Debug.Log(hit.transform.name);
             TargetScript target = hit.transform.GetComponent<TargetScript>();
             if (target != null) {
-                target.TakeDamage(weaponData.dmg);
+                target.TakeDamage(gunStats.dmg);
             }
         }
     }
