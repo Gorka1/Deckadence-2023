@@ -43,7 +43,7 @@ public class DeckManager : MonoBehaviour
     public List<CardData> GetHandList() { return handList; }
     public List<CardData> GetinternalDeckList() { return internalDeckList; }
     public List<CardData> GetDiscardList() { return discardList; }
-    public int GetHandListInd() { return handListInd; }
+    public int GetHandListInd() { return handListInd; } // do we need this?
     public void IncHandListInd(int inc = 1) { handListInd += inc; }
     public void SetHandInd(int newVal) { handListInd = newVal; }
     public CardData GetHandCard() {
