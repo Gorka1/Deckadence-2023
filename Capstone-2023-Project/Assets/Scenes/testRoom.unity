@@ -2466,6 +2466,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a7a4cf79642e4896805177f1b88b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   DamageModifier: 1
 --- !u!65 &398251243
 BoxCollider:
@@ -2597,6 +2598,7 @@ MonoBehaviour:
   - {fileID: 1036333034}
   WM: {fileID: 0}
   testCard: {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  testGun: {fileID: 0}
 --- !u!114 &428477528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2610,7 +2612,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckList:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
   handList: []
   internalDeckList: []
   discardList: []
@@ -4742,6 +4751,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a7a4cf79642e4896805177f1b88b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   DamageModifier: 1
 --- !u!65 &898554149
 BoxCollider:
@@ -6328,6 +6338,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a7a4cf79642e4896805177f1b88b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   DamageModifier: 1
 --- !u!65 &1187609875
 BoxCollider:
@@ -7956,6 +7967,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a7a4cf79642e4896805177f1b88b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   DamageModifier: 1
 --- !u!65 &1551339781
 BoxCollider:
@@ -8557,6 +8569,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3b7a7a4cf79642e4896805177f1b88b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  health: 100
   DamageModifier: 1
 --- !u!65 &1721130479
 BoxCollider:
