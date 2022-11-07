@@ -85,5 +85,7 @@ public class DeckManager : MonoBehaviour
         CardData currCardData = handList[handListInd];
         CardObj currCardObj = new CardObj(currCardData);
         currCardObj.ApplyEffect();
+        RemoveCurrCard();
+        AddToHand(handListInd);
     }
 }
