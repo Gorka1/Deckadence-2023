@@ -2660,7 +2660,7 @@ MonoBehaviour:
   - {fileID: 1036333034}
   WM: {fileID: 0}
   testCard: {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
-  testGun: {fileID: 3505449482831923185, guid: 7366e1933f4d703429b8da47c8902837, type: 3}
+  testGun: {fileID: 0}
 --- !u!114 &428477528
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2674,7 +2674,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   deckList:
-  - {fileID: 0}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
   handList: []
   internalDeckList: []
   discardList: []
