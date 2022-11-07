@@ -29,13 +29,11 @@ public class TextBasedUI : MonoBehaviour
                 cardText += cd.name;
             }
         }
-        Debug.Log(cardText);
         CardText.text = cardText;
         string weaponText = "Weapons: ";
         foreach (GunStatusReport gs in WM.GetGunStatus()) {
             weaponText += gs.name;
         }
-        Debug.Log(weaponText);
         WeaponText.text = weaponText;
     }
 }
