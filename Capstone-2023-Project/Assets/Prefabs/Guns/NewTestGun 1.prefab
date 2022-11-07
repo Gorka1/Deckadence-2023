@@ -79,9 +79,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   firePoint: {fileID: 2077231587550374544}
   gunStats:
-    dmg: 0
-    fireRate: 0
-    range: 0
+    dmg: 10
+    fireRate: 0.2
+    range: 10
     fireType: 0
     ammo: 0
     speed: 0

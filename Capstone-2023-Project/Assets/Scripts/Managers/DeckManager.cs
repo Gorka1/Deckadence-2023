@@ -52,7 +52,7 @@ public class DeckManager : MonoBehaviour
     }
     public void RemoveCurrCard() {
         if (handListInd != 0) { handListInd--; }
-        handList.RemoveAt(handListInd);
+        handList[handListInd] = null;
     }
     CardData GetDeckCard() {
         if (internalDeckList.Count == 0) {
