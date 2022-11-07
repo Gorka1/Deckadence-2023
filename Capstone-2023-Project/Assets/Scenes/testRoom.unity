@@ -5082,6 +5082,10 @@ PrefabInstance:
       value: PlayerV3
       objectReference: {fileID: 0}
     - target: {fileID: 6946028181998918250, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
+      propertyPath: scrollwheelScale
+      value: 0.4
+      objectReference: {fileID: 0}
+    - target: {fileID: 6946028181998918250, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
       propertyPath: weaponInventory.Array.size
       value: 1
       objectReference: {fileID: 0}

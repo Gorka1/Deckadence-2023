@@ -52,7 +52,7 @@ MonoBehaviour:
   - {fileID: 0}
   WM: {fileID: 0}
   testCard: {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
-  testGun: {fileID: 0}
+  testGun: {fileID: 3505449482831923185, guid: 0c67f364cccd0d845a155a275a1caf2e, type: 3}
 --- !u!114 &4628768736747953031
 MonoBehaviour:
   m_ObjectHideFlags: 0
