@@ -51,7 +51,7 @@ public class DeckManager : MonoBehaviour
         else return handList[handListInd];
     }
     public void RemoveCurrCard() {
-        if (handListInd != 0) { handListInd--; }
+        // if (handListInd != 0) { handListInd--; }     // why??
         handList[handListInd] = null;
     }
     CardData GetDeckCard() {
@@ -82,6 +82,9 @@ public class DeckManager : MonoBehaviour
     }
 
     public void UseCurrCard() {
+        if (handList[handListInd] == null && handListInd < handList.Count) {
+            handListInd++;
+        }
         CardData currCardData = handList[handListInd];
         CardObj currCardObj = new CardObj(currCardData);
         currCardObj.ApplyEffect();
