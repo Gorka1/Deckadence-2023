@@ -36,7 +36,10 @@ public class DeckManager : MonoBehaviour
         //     handListInd--;
         // }
         if (internalDeckList.Count == 0) {
-            DiscardToDeck();
+            int numOfNull = 0;
+            foreach (CardData cd in handList) { if (cd == null) numOfNull++; }
+            if (numOfNull == handList.Count)
+                DiscardToDeck();
         }
     }
 
@@ -52,6 +55,7 @@ public class DeckManager : MonoBehaviour
     }
     public void RemoveCurrCard() {
         // if (handListInd != 0) { handListInd--; }     // why??
+        AddToDiscard(handList[handListInd]);
         handList[handListInd] = null;
     }
     CardData GetDeckCard() {
@@ -67,6 +71,7 @@ public class DeckManager : MonoBehaviour
         if (internalDeckList.Count == 0) {
             internalDeckList = new List<CardData>(discardList);
             discardList.Clear();
+            Init();
         }
     }
     public void AddToHand(int position) {
