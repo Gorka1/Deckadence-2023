@@ -15,7 +15,7 @@ public class SingleShot : BaseGunScript
             gunStats.range
             )) {
             Debug.Log(hit.transform.name);
-            Debug.Log(hit);
+            // Debug.DrawRay(firePoint.transform.position, firePoint.transform.forward,Color.green, 5f);
             NpcManager target = hit.transform.GetComponent<NpcManager>();
             if (target != null) {
                 target.TakeDamage(gunStats.dmg);
