@@ -8832,7 +8832,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
-    m_FontSize: 30
+    m_FontSize: 15
     m_FontStyle: 1
     m_BestFit: 0
     m_MinSize: 0
@@ -10533,6 +10533,30 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 4628768736747953031, guid: e415e2227ddb6d948ac3aee433d3bb9b, type: 3}
+      propertyPath: deckList.Array.data[2]
+      value: 
+      objectReference: {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
+    - target: {fileID: 4628768736747953031, guid: e415e2227ddb6d948ac3aee433d3bb9b, type: 3}
+      propertyPath: deckList.Array.data[3]
+      value: 
+      objectReference: {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
+    - target: {fileID: 4628768736747953031, guid: e415e2227ddb6d948ac3aee433d3bb9b, type: 3}
+      propertyPath: deckList.Array.data[4]
+      value: 
+      objectReference: {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
+    - target: {fileID: 4628768736747953031, guid: e415e2227ddb6d948ac3aee433d3bb9b, type: 3}
+      propertyPath: deckList.Array.data[5]
+      value: 
+      objectReference: {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
+    - target: {fileID: 4628768736747953031, guid: e415e2227ddb6d948ac3aee433d3bb9b, type: 3}
+      propertyPath: deckList.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
+    - target: {fileID: 4628768736747953031, guid: e415e2227ddb6d948ac3aee433d3bb9b, type: 3}
+      propertyPath: deckList.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
     - target: {fileID: 4628768736747953032, guid: e415e2227ddb6d948ac3aee433d3bb9b, type: 3}
       propertyPath: buttons.Array.data[0]
       value: 

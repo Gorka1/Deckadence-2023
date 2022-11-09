@@ -15,9 +15,10 @@ public abstract class AbstractEffect : MonoBehaviour
 
     private void Update() {
         if (testCombat && !active) {
+            Debug.Log("Effect update");
+            active = true;
             MainEffect();
             Wait();
-            active = true;
             Destroy(this);
         }
     }
