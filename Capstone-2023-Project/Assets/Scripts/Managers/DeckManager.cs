@@ -36,7 +36,10 @@ public class DeckManager : MonoBehaviour
         //     handListInd--;
         // }
         if (internalDeckList.Count == 0) {
-            DiscardToDeck();
+            int numOfNull = 0;
+            foreach (CardData cd in handList) { if (cd == null) numOfNull++; }
+            if (numOfNull == handList.Count)
+                DiscardToDeck();
         }
     }
 
@@ -51,8 +54,9 @@ public class DeckManager : MonoBehaviour
         else return handList[handListInd];
     }
     public void RemoveCurrCard() {
-        if (handListInd != 0) { handListInd--; }
-        handList.RemoveAt(handListInd);
+        // if (handListInd != 0) { handListInd--; }     // why??
+        AddToDiscard(handList[handListInd]);
+        handList[handListInd] = null;
     }
     CardData GetDeckCard() {
         if (internalDeckList.Count == 0) {
@@ -67,6 +71,7 @@ public class DeckManager : MonoBehaviour
         if (internalDeckList.Count == 0) {
             internalDeckList = new List<CardData>(discardList);
             discardList.Clear();
+            Init();
         }
     }
     public void AddToHand(int position) {
@@ -82,10 +87,15 @@ public class DeckManager : MonoBehaviour
     }
 
     public void UseCurrCard() {
+        // if (handList[handListInd] == null && handListInd < handList.Count) {
+        //     handListInd++;
+        // }
         CardData currCardData = handList[handListInd];
-        CardObj currCardObj = new CardObj(currCardData);
-        currCardObj.ApplyEffect();
-        RemoveCurrCard();
+        if (currCardData != null){
+            CardObj currCardObj = new CardObj(currCardData);
+            currCardObj.ApplyEffect();
+            RemoveCurrCard();
+        }
         AddToHand(handListInd);
     }
 }

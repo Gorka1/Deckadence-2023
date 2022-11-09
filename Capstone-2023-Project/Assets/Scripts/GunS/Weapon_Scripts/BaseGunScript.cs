@@ -4,6 +4,7 @@ using UnityEngine;
 
 public abstract class BaseGunScript : MonoBehaviour
 {
+    public string gunName = "gun";
     public GameObject firePoint;
     public GunStats gunStats;
     public GunData gunData;
@@ -45,11 +46,12 @@ public abstract class BaseGunScript : MonoBehaviour
 
     public GunStatusReport GetReport() {
         GunStatusReport returnData = new GunStatusReport();
-        foreach (GameObject child in transform) {
-            if (child.CompareTag("Effect")) {
-                returnData.effectData.Add(child.GetComponent<AbstractEffect>().GetReport());
-            }
-        }
+        returnData.name = gunName;
+        // foreach (GameObject child in transform) {    // 'specified cast not supported'
+        //     if (child.CompareTag("Effect")) {
+        //         returnData.effectData.Add(child.GetComponent<AbstractEffect>().GetReport());
+        //     }
+        // }
         return returnData;
     }
 

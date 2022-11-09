@@ -27,8 +27,8 @@ public class NpcManager : MonoBehaviour
 
     void Die() {
         conditions.Add("dead");
-        EventObj newEvent = new EventObj(QuestEnums.SignalOrigin.Enemy, conditions);
-        GM.TakeQuestEvent(newEvent);
+        // EventObj newEvent = new EventObj(QuestEnums.SignalOrigin.Enemy, conditions);
+        // GM.TakeQuestEvent(newEvent);
         Destroy(gameObject);
     }
 

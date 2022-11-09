@@ -15,6 +15,8 @@ public class WeaponManager : MonoBehaviour
     List<GameObject> weaponInventory;
     [SerializeField]
     GameObject weaponPoint;
+    [SerializeField]
+    GameObject firePoint;
     private int ammoCount;
     private int currindex = 1;
     private WeaponObj weaponObj;
@@ -87,7 +89,9 @@ public class WeaponManager : MonoBehaviour
 
     // take in prefab to add to weapon list
     public void AddWeapon(GameObject newWeapon) {
-        weaponInventory.Add(Instantiate(newWeapon, this.transform));
+        GameObject gunObj = Instantiate(newWeapon, this.transform);
+        gunObj.GetComponent<BaseGunScript>().firePoint = firePoint;
+        weaponInventory.Add(gunObj);
         if (weaponInventory.Count == 1) {
             SetWeaponAtInd(currindex, true);
         }

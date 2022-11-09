@@ -16,8 +16,8 @@ MonoBehaviour:
   cardRank: 0
   testWeaponColor: {r: 0.27843142, g: 1, b: 0.33069816, a: 0}
   cardGraphic: {fileID: 21300000, guid: dac7066ba29e16848ba8a9e33e84d3b5, type: 3}
-  questCode: 0
+  rarity: 0
   effectScript: {fileID: 0}
+  effectObj: {fileID: 5695906508359778758, guid: a5e1d06e21f5d074da1e0e56ad6d575c, type: 3}
+  targetType: 4
   target: 
-  questEvent: {fileID: 11400000, guid: 3b5c658ef28ead946afd14bd8a6b1fca, type: 2}
-  numberOfEvents: 0

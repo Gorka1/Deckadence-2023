@@ -77,12 +77,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb0265302695d340b8277d0a10c3578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunName: Uzi
   firePoint: {fileID: 2077231587550374544}
   gunStats:
-    dmg: 10
-    fireRate: 10
+    dmg: 1
+    fireRate: 5
     range: 10
-    fireType: 0
+    fireType: 1
     ammo: 0
     speed: 0
     critChance: 0

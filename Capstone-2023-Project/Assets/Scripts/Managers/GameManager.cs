@@ -44,6 +44,23 @@ public class GameManager : MonoBehaviour
         if (Input.GetKeyDown("q")) {        // activate a card
             deckM.UseCurrCard();
         }
+        // 1-4 card selection
+        if (Input.GetKeyDown("1")) {
+            deckM.SetHandInd(0);
+            deckM.UseCurrCard();
+        }
+        if (Input.GetKeyDown("2")) {
+            deckM.SetHandInd(1);
+            deckM.UseCurrCard();
+        }
+        if (Input.GetKeyDown("3")) {
+            deckM.SetHandInd(2);
+            deckM.UseCurrCard();
+        }
+        if (Input.GetKeyDown("4")) {
+            deckM.SetHandInd(3);
+            deckM.UseCurrCard();
+        }
         // if (Input.GetButtonDown("use card") || Input.GetKeyDown("e")) {
         //     QueueM.UseCard();
         // }
