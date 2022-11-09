@@ -7,15 +7,12 @@ using UnityEngine;
 public class CardData : ScriptableObject
 {
     public int cardID;
-    public int cardRank;
+    public string cardName;
     public Color testWeaponColor;      // placeholder for testing
     public Sprite cardGraphic;
-    public Dictionary<string, string> changesDict;
     // card info
     public CardEnums.CardRarity rarity;
-    public AbstractEffect effectScript;
     public GameObject effectObj;
-    public delegate void effectFunc();
     public CardEnums.TargetType targetType;
     public string target;
 }

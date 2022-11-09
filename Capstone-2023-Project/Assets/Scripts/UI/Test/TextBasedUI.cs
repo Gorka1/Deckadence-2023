@@ -26,7 +26,7 @@ public class TextBasedUI : MonoBehaviour
         string cardText = "Hand: ";
         foreach (CardData cd in DM.GetHandList()) {
             if (cd != null) {
-                cardText += cd.name + " ";
+                cardText += cd.cardName + " ";
             } else {
                 cardText += " Null ";
             }
