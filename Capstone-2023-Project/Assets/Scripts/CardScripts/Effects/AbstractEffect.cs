@@ -6,6 +6,8 @@ public abstract class AbstractEffect : MonoBehaviour
 {
     [SerializeField]
     float time = 5f;
+    float internalTime = 0f;
+    bool timerReached = false;
     [SerializeField]
     Sprite icon;
     [SerializeField]
@@ -14,17 +16,20 @@ public abstract class AbstractEffect : MonoBehaviour
     bool active = false;        // is this even needed
 
     private void Update() {
+        if (!timerReached && active)
+            internalTime += Time.deltaTime;
+        if (internalTime > time)
+            timerReached = true;        
+
         if (testCombat && !active) {
-            Debug.Log("Effect update");
             active = true;
             MainEffect();
             Wait();
-            Destroy(this);
         }
     }
 
     public EffectData GetReport() {
-        return new EffectData(icon, name, time);
+        return new EffectData(icon, name, internalTime);
     }
 
     public abstract void MainEffect();
@@ -36,6 +41,6 @@ public abstract class AbstractEffect : MonoBehaviour
     IEnumerator WaitCoroutine() {
         yield return new WaitForSeconds(time);     // get wait settings
         UndoEffect();
-        // call UndoEffect
+        Destroy(this.gameObject);
     }
 }
