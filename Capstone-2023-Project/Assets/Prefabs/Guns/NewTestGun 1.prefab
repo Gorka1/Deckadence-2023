@@ -80,8 +80,8 @@ MonoBehaviour:
   gunName: Pistol
   firePoint: {fileID: 2077231587550374544}
   gunStats:
-    dmg: 10
-    fireRate: 10
+    dmg: 2
+    fireRate: 2
     range: 10
     fireType: 0
     ammo: 0
