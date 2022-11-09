@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3515,6 +3515,18 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1135940706}
     m_Modifications:
+    - target: {fileID: 1537142080620533559, guid: bb86d83f9689b3f47926fc0f6be7c76e, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1322678965}
+    - target: {fileID: 1537142080620533559, guid: bb86d83f9689b3f47926fc0f6be7c76e, type: 3}
+      propertyPath: gunStats.range
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1537142080620533559, guid: bb86d83f9689b3f47926fc0f6be7c76e, type: 3}
+      propertyPath: gunStats.fireRate
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 1999972169740184439, guid: bb86d83f9689b3f47926fc0f6be7c76e, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -5082,8 +5094,12 @@ PrefabInstance:
       value: PlayerV3
       objectReference: {fileID: 0}
     - target: {fileID: 6946028181998918250, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1322678965}
+    - target: {fileID: 6946028181998918250, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
       propertyPath: scrollwheelScale
-      value: 0.4
+      value: 0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6946028181998918250, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
       propertyPath: weaponInventory.Array.size
@@ -6735,6 +6751,11 @@ Transform:
   m_Father: {fileID: 1045290752}
   m_RootOrder: 45
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1322678965 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6701475014955813812, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
+  m_PrefabInstance: {fileID: 949177780}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1361209882
 GameObject:
   m_ObjectHideFlags: 0
@@ -7567,6 +7588,37 @@ Transform:
   m_Children: []
   m_Father: {fileID: 1045290752}
   m_RootOrder: 53
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &1488562392
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1488562393}
+  m_Layer: 0
+  m_Name: FirePointMain
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1488562393
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1488562392}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -0.5, y: 0.42699987, z: -0.08499992}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1135940706}
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!224 &1513771898 stripped
 RectTransform:

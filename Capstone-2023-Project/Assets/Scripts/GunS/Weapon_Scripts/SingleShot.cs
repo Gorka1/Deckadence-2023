@@ -6,7 +6,7 @@ public class SingleShot : BaseGunScript
 {
     public override void FireEvent() {
         Debug.Log("Single Shot Firing");
-        RaycastHit hit;
+        RaycastHit hit = new RaycastHit();
 
         if (Physics.Raycast(
             firePoint.transform.position,
@@ -15,7 +15,8 @@ public class SingleShot : BaseGunScript
             gunStats.range
             )) {
             Debug.Log(hit.transform.name);
-            TargetScript target = hit.transform.GetComponent<TargetScript>();
+            Debug.Log(hit);
+            NpcManager target = hit.transform.GetComponent<NpcManager>();
             if (target != null) {
                 target.TakeDamage(gunStats.dmg);
             }
