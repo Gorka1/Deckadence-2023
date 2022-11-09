@@ -82,13 +82,15 @@ public class DeckManager : MonoBehaviour
     }
 
     public void UseCurrCard() {
-        if (handList[handListInd] == null && handListInd < handList.Count) {
-            handListInd++;
-        }
+        // if (handList[handListInd] == null && handListInd < handList.Count) {
+        //     handListInd++;
+        // }
         CardData currCardData = handList[handListInd];
-        CardObj currCardObj = new CardObj(currCardData);
-        currCardObj.ApplyEffect();
-        RemoveCurrCard();
+        if (currCardData != null){
+            CardObj currCardObj = new CardObj(currCardData);
+            currCardObj.ApplyEffect();
+            RemoveCurrCard();
+        }
         AddToHand(handListInd);
     }
 }
