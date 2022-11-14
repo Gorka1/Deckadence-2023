@@ -10,6 +10,8 @@ public abstract class BaseGunScript : MonoBehaviour
     public GunData gunData;
     [SerializeField]
     protected GameObject gunModel;
+    [SerializeField]
+    protected GameObject propFirePoint;
     protected WeaponManager WM;
     private float nextTimeToFire = 0f;
     bool gameEnabled = false;

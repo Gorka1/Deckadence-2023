@@ -21,7 +21,7 @@ public class BulletMovement : MonoBehaviour
 
     private void Update() {
         if (set) {
-            transform.Translate(Vector3.forward * bulletSpeed * Time.deltaTime);
+            transform.Translate(this.transform.forward * bulletSpeed * Time.deltaTime);
             if (Vector3.Distance(origin.position, transform.position) > range) {
                 Destroy(gameObject);
             }

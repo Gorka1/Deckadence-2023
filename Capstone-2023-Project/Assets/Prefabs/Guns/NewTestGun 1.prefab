@@ -92,6 +92,8 @@ MonoBehaviour:
   gunData:
     cardIcon: {fileID: 0}
   gunModel: {fileID: 7313151654944753569}
+  propFirePoint: {fileID: 2077231587550374544}
+  propProjectile: {fileID: 6278266990674932253, guid: ebe18672cedaa2045b100465678315f0, type: 3}
 --- !u!1 &7313151654944753569
 GameObject:
   m_ObjectHideFlags: 0
