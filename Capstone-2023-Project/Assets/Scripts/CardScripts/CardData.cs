@@ -7,6 +7,7 @@ using UnityEngine;
 public class CardData : ScriptableObject
 {
     public int cardID;
+    public int cost;
     public string cardName;
     public Color testWeaponColor;      // placeholder for testing
     public Sprite cardGraphic;

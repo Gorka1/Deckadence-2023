@@ -21,7 +21,10 @@ public class NpcManager : MonoBehaviour
     public void TakeDamage(int dmg) {
         stats.health -= dmg;
         if (stats.health <= 0) {
+            GM.LethalHit();
             Die();
+        } else {
+            GM.NonLethalHit();
         }
     }
 

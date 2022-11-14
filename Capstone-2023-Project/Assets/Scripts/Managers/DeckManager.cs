@@ -16,9 +16,11 @@ public class DeckManager : MonoBehaviour
     int maxHandSize = 5;
     [SerializeField]
     int handListInd;
+    GameManager GM;
 
     private void Start() {
         internalDeckList = new List<CardData>(deckList);
+        GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     public void Init() {
@@ -91,9 +93,10 @@ public class DeckManager : MonoBehaviour
         //     handListInd++;
         // }
         CardData currCardData = handList[handListInd];
-        if (currCardData != null){
+        if (currCardData != null && currCardData.cost <= GM.GetPlayerPoints()){
             CardObj currCardObj = new CardObj(currCardData);
             currCardObj.ApplyEffect();
+            GM.SpendPoints(currCardData.cost);
             RemoveCurrCard();
         }
         AddToHand(handListInd);
