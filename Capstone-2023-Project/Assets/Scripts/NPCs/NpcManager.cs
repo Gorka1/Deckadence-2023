@@ -12,6 +12,8 @@ public class NpcManager : MonoBehaviour
     List<string> conditions;
     [SerializeField]
     bool isMoving = true;
+    [SerializeField]
+    Renderer materialRenderer;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
