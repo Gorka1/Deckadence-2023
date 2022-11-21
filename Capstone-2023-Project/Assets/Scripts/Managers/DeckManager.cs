@@ -16,15 +16,19 @@ public class DeckManager : MonoBehaviour
     int maxHandSize = 5;
     [SerializeField]
     int handListInd;
+    GameManager GM;
 
     private void Start() {
         internalDeckList = new List<CardData>(deckList);
+        GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
     }
 
     public void Init() {
         // handList = new List<CardData>(4);
         for (int i = 0; i < 4; i++) {
-            handList[i] = GetDeckCard();
+            if (handList[i] == null) {
+                handList[i] = GetDeckCard();
+            }
         }
     }
 
@@ -35,12 +39,13 @@ public class DeckManager : MonoBehaviour
         // } else if (currScollInput < -.5f && handListInd > 0) {
         //     handListInd--;
         // }
-        if (internalDeckList.Count == 0) {
-            int numOfNull = 0;
-            foreach (CardData cd in handList) { if (cd == null) numOfNull++; }
-            if (numOfNull == handList.Count)
-                DiscardToDeck();
-        }
+        // if (internalDeckList.Count == 0) {
+        //     int numOfNull = 0;
+        //     foreach (CardData cd in handList) { if (cd == null) numOfNull++; }
+        //     if (numOfNull == handList.Count)
+        //         DiscardToDeck();
+        //     // DiscardToDeck();
+        // }
     }
 
     public List<CardData> GetHandList() { return handList; }
@@ -54,7 +59,6 @@ public class DeckManager : MonoBehaviour
         else return handList[handListInd];
     }
     public void RemoveCurrCard() {
-        // if (handListInd != 0) { handListInd--; }     // why??
         AddToDiscard(handList[handListInd]);
         handList[handListInd] = null;
     }
@@ -77,6 +81,9 @@ public class DeckManager : MonoBehaviour
     public void AddToHand(int position) {
         if (internalDeckList.Count != 0) {
             handList[position] = GetDeckCard();
+        } else {
+            DiscardToDeck();
+            // handList[position] = GetDeckCard();
         }
     }
     public void AddToDeck(CardData newCard) {
@@ -87,15 +94,13 @@ public class DeckManager : MonoBehaviour
     }
 
     public void UseCurrCard() {
-        // if (handList[handListInd] == null && handListInd < handList.Count) {
-        //     handListInd++;
-        // }
         CardData currCardData = handList[handListInd];
-        if (currCardData != null){
+        if (currCardData != null && currCardData.cost <= GM.GetPlayerPoints()){
             CardObj currCardObj = new CardObj(currCardData);
             currCardObj.ApplyEffect();
+            GM.SpendPoints(currCardData.cost);
             RemoveCurrCard();
+            AddToHand(handListInd);
         }
-        AddToHand(handListInd);
     }
 }

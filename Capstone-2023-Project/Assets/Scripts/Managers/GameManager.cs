@@ -17,6 +17,12 @@ public class GameManager : MonoBehaviour
     CardData testCard;
     [SerializeField]
     GameObject testGun;
+    [SerializeField]
+    int nonLethalPoints;
+    [SerializeField]
+    int lethalPoints;
+    [SerializeField]
+    int playerPoints = 0;
     bool startRun = false;
 
     private void Start() {
@@ -119,4 +125,8 @@ public class GameManager : MonoBehaviour
     }
 
     public Vector3 GetPlayerPos() { return playerObj.transform.position; }
+    public void NonLethalHit() { playerPoints += nonLethalPoints; }
+    public void LethalHit() { playerPoints += lethalPoints; }
+    public int GetPlayerPoints() { return playerPoints; }
+    public void SpendPoints(int cost) { playerPoints -= cost; }
 }

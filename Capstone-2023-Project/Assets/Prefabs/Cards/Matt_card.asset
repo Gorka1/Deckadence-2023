@@ -13,11 +13,11 @@ MonoBehaviour:
   m_Name: Matt_card
   m_EditorClassIdentifier: 
   cardID: 0
-  cardRank: 0
+  cost: 100
+  cardName: 
   testWeaponColor: {r: 0, g: 0, b: 0, a: 0}
   cardGraphic: {fileID: 0}
   rarity: 0
-  effectScript: {fileID: 0}
   effectObj: {fileID: 2374125837048381312, guid: f8d30a3c83014f44eabb094687db771b, type: 3}
   targetType: 4
   target: 

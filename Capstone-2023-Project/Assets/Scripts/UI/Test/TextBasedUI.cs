@@ -12,6 +12,8 @@ public class TextBasedUI : MonoBehaviour
     Text CardText;
     [SerializeField]
     Text WeaponText;
+    [SerializeField]
+    Text PointsText;
     // Start is called before the first frame update
     void Start()
     {
@@ -37,5 +39,6 @@ public class TextBasedUI : MonoBehaviour
             weaponText += gs.name;
         }
         WeaponText.text = weaponText;
+        PointsText.text = "Points: " + GM.GetPlayerPoints();
     }
 }
