@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.44657826, g: 0.49641263, b: 0.57481676, a: 1}
+  m_IndirectSpecularColor: {r: 0.44657898, g: 0.4964133, b: 0.5748178, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -601,6 +601,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1135940706}
     m_Modifications:
+    - target: {fileID: 1537142080620533559, guid: 0c67f364cccd0d845a155a275a1caf2e, type: 3}
+      propertyPath: firePoint
+      value: 
+      objectReference: {fileID: 1322678965}
     - target: {fileID: 1999972169740184439, guid: 0c67f364cccd0d845a155a275a1caf2e, type: 3}
       propertyPath: m_RootOrder
       value: 1
@@ -3583,14 +3587,6 @@ PrefabInstance:
       propertyPath: firePoint
       value: 
       objectReference: {fileID: 1322678965}
-    - target: {fileID: 1537142080620533559, guid: bb86d83f9689b3f47926fc0f6be7c76e, type: 3}
-      propertyPath: gunStats.range
-      value: 10
-      objectReference: {fileID: 0}
-    - target: {fileID: 1537142080620533559, guid: bb86d83f9689b3f47926fc0f6be7c76e, type: 3}
-      propertyPath: gunStats.fireRate
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 1999972169740184439, guid: bb86d83f9689b3f47926fc0f6be7c76e, type: 3}
       propertyPath: m_RootOrder
       value: 0

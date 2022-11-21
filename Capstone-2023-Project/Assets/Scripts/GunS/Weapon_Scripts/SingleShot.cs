@@ -9,6 +9,7 @@ public class SingleShot : BaseGunScript
     public override void FireEvent() {
         Debug.Log("Single Shot Firing");
         RaycastHit hit = new RaycastHit();
+        Debug.DrawRay(firePoint.transform.position, firePoint.transform.forward,Color.green, 5f);
 
         // TODO: spawn the propProjectile towards the shot
         // it doesn't go forward, it just goes down
@@ -19,14 +20,13 @@ public class SingleShot : BaseGunScript
             firePoint.transform.position,
             firePoint.transform.forward,
             out hit,
-            gunStats.range
+            gunStats.range,
+            LayerMask.GetMask("Target")
             )) {
             Debug.Log(hit.transform.name);
-            Debug.DrawRay(firePoint.transform.position, firePoint.transform.forward,Color.green, 5f);
+            
             NpcManager target = hit.transform.GetComponent<NpcManager>();
-            if (target != null) {
-                target.TakeDamage(gunStats.dmg);
-            }
+            target?.TakeDamage(gunStats.dmg);
         }
     }
 }

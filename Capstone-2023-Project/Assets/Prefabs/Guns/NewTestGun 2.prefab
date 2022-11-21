@@ -78,7 +78,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Uzi
-  firePoint: {fileID: 2077231587550374544}
+  firePoint: {fileID: 0}
   gunStats:
     dmg: 1
     fireRate: 5

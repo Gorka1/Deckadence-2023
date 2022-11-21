@@ -78,10 +78,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gunName: Pistol
-  firePoint: {fileID: 2077231587550374544}
+  firePoint: {fileID: 0}
   gunStats:
     dmg: 2
-    fireRate: 2
+    fireRate: 10
     range: 10
     fireType: 0
     ammo: 0
