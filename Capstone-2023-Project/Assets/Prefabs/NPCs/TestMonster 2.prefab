@@ -117,7 +117,7 @@ MonoBehaviour:
   conditions:
   - Monster2
   isMoving: 0
-  materialRenderer: {fileID: 0}
+  materialRenderer: {fileID: 2608968887481623703}
 --- !u!54 &5005452089826075171
 Rigidbody:
   m_ObjectHideFlags: 0

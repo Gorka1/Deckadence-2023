@@ -12,12 +12,12 @@ public class NpcManager : MonoBehaviour
     List<string> conditions;
     [SerializeField]
     bool isMoving = true;
-    [SerializeField]
     Renderer materialRenderer;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _agent = this.GetComponent<NavMeshAgent>();
+        materialRenderer = this.GetComponent<Renderer>();
     }
 
     public void TakeDamage(int dmg) {
@@ -27,6 +27,7 @@ public class NpcManager : MonoBehaviour
             Die();
         } else {
             GM.NonLethalHit();
+            StartCoroutine(ColorHit());
         }
     }
 
@@ -41,5 +42,12 @@ public class NpcManager : MonoBehaviour
         if (isMoving) {
             _agent.SetDestination(GM.GetPlayerPos());
         }
+    }
+
+    IEnumerator ColorHit() {
+        Color currColor = materialRenderer.material.color; 
+        materialRenderer.material.SetColor("_Color", Color.red);
+        yield return new WaitForSeconds(.1f);
+        materialRenderer.material.SetColor("_Color", currColor);
     }
 }
