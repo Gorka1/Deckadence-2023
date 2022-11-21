@@ -3323,18 +3323,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: TestMonster 2
       objectReference: {fileID: 0}
-    - target: {fileID: 2608968887481623701, guid: 40dcd8c92643fe34b9495fda412c42bf, type: 3}
-      propertyPath: stats.dmg
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608968887481623701, guid: 40dcd8c92643fe34b9495fda412c42bf, type: 3}
-      propertyPath: stats.attackRate
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 2608968887481623701, guid: 40dcd8c92643fe34b9495fda412c42bf, type: 3}
-      propertyPath: stats.attackRange
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 2608968887481623705, guid: 40dcd8c92643fe34b9495fda412c42bf, type: 3}
       propertyPath: m_RootOrder
       value: 3
