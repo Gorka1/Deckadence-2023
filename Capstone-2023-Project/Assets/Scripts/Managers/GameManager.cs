@@ -125,6 +125,7 @@ public class GameManager : MonoBehaviour
     }
 
     public Vector3 GetPlayerPos() { return playerObj.transform.position; }
+    public GameObject GetPlayer() { return playerObj; }
     public void NonLethalHit() { playerPoints += nonLethalPoints; }
     public void LethalHit() { playerPoints += lethalPoints; }
     public int GetPlayerPoints() { return playerPoints; }

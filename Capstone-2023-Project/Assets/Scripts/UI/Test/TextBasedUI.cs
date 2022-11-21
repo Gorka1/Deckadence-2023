@@ -8,18 +8,22 @@ public class TextBasedUI : MonoBehaviour
     GameManager GM;
     DeckManager DM;
     WeaponManager WM;
+    PlayerManager PM;
     [SerializeField]
     Text CardText;
     [SerializeField]
     Text WeaponText;
     [SerializeField]
     Text PointsText;
+    [SerializeField]
+    Text HealthText;
     // Start is called before the first frame update
     void Start()
     {
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         DM = GM.GetComponentInParent<DeckManager>();
         WM = GameObject.FindGameObjectWithTag("WeaponManager").GetComponent<WeaponManager>();
+        PM = GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerManager>();
     }
 
     // Update is called once per frame
@@ -40,5 +44,6 @@ public class TextBasedUI : MonoBehaviour
         }
         WeaponText.text = weaponText;
         PointsText.text = "Points: " + GM.GetPlayerPoints();
+        HealthText.text = "Health: " + PM.GetCurrHealth();
     }
 }
