@@ -6,4 +6,8 @@ using UnityEngine;
 public class NpcStats
 {
     public int health;
+    public int dmg;
+    public float attackRange;
+    public float playerRange;
+    public float attackRate;
 }

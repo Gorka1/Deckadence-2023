@@ -114,10 +114,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats:
     health: 5
+    dmg: 2
+    attackRange: 10
+    playerRange: 0
+    attackRate: 1
   conditions:
   - Monster2
   isMoving: 0
-  materialRenderer: {fileID: 2608968887481623703}
 --- !u!54 &5005452089826075171
 Rigidbody:
   m_ObjectHideFlags: 0
