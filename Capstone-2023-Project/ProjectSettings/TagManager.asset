@@ -8,6 +8,8 @@ TagManager:
   - Bullet
   - Weapon
   - Enemy
+  - Effect
+  - WeaponManager
   layers:
   - Default
   - TransparentFX
@@ -16,7 +18,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - 
+  - Target
   - 
   - 
   - 

@@ -6,8 +6,6 @@ using UnityEngine;
 public class CardObj
 {
     readonly CardData Data;
-    int eventCount = 0;
-    bool questStatus = false;
 
     public CardObj() { Data = null; }
 
@@ -40,42 +38,31 @@ public class CardObj
         return this.Data.cardID == other.GetData().cardID;
     }
 
-    public void IncCount(int inc = 1) { eventCount += inc; }
-    public bool CheckCompletion() { return eventCount >= Data.numberOfEvents; }
-    public void ResetCount() { eventCount = 0; }
-    public void SetQuestStatus(bool status = true) { questStatus = status; }
-    public bool GetQuestStatus() { 
-        Debug.Log(string.Format("QuestStatus: {0} EventCount: {1}", questStatus.ToString(), eventCount.ToString()));
-        return questStatus;
-    }
     public void ApplyEffect() {     // actually add effect script to its targets
         Debug.Log(Data.cardID + "'s effect has been activated");
         GameObject[] foundCards = GetTargets();
         for (int i = 0; i < foundCards.Length; i++) {
-
-            // MonoBehaviour MB = foundCards[i].AddComponent<MonoBehaviour>() as MonoBehaviour;
-            // MB = Data.effectScript;
-            // foundCards[i].AddComponent(Data.effectScript.name);
-            // Types.GetType(Data.effectScript.name, "Assembly-CSharp.dll");
-            // foundCards[i].GetComponent<GameManager>();
-            Data.effectScript.MainEffect(foundCards[i]);
+            // Data.effectScript.MainEffect(foundCards[i]);
+            GameObject.Instantiate(Data.effectObj, foundCards[i].transform);
         }
     }
 
     GameObject[] GetTargets() {
         switch (Data.targetType) {
-            case QuestEnums.TargetType.Tags:
+            case CardEnums.TargetType.Tags:
                 return GameObject.FindGameObjectsWithTag(Data.target);
-                break;
-            // case QuestEnums.TargetType.Component:
+            // case CardEnums.TargetType.Component:
             //     return GameObject.FindObjectsOfType(Types.GetType(Data.target, "Assembly-CSharp.dll")) as GameObject[];
             //     break;       // Types.GetType is deprecated, figure out another way
-            case QuestEnums.TargetType.Name:
+            case CardEnums.TargetType.Name:
                 GameObject foundObj = GameObject.Find(Data.target);
                 GameObject[] returnArray = new GameObject[1];
                 returnArray[0] = foundObj;
                 return returnArray;
-                break;
+            case CardEnums.TargetType.Gun:       // add a ref to current gun
+                GameObject[] gunArray = new GameObject[1];
+                gunArray[0] = GameObject.FindGameObjectWithTag("WeaponManager").GetComponent<WeaponManager>().GetCurrGun();
+                return gunArray;
             default:
                 return null;
         }
