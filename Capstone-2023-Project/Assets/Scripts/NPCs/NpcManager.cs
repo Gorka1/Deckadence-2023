@@ -13,12 +13,13 @@ public class NpcManager : MonoBehaviour
     [SerializeField]
     bool isMoving = true;
     bool isAttacking = false;
+    [SerializeField]
     Renderer materialRenderer;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _agent = this.GetComponent<NavMeshAgent>();
-        materialRenderer = this.GetComponent<Renderer>();
+        // materialRenderer = this.GetComponent<Renderer>();
     }
 
     private void Update() {
@@ -27,8 +28,10 @@ public class NpcManager : MonoBehaviour
         }
         if (isMoving && Vector3.Distance(GM.GetPlayerPos(), this.transform.position) >= stats.playerRange) {
             _agent.SetDestination(GM.GetPlayerPos());
+            // start moving animation
         } else {
             _agent.isStopped = true;
+            // start idle animation
         }
     }
 
