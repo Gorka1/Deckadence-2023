@@ -29,6 +29,7 @@ public class GameManager : MonoBehaviour
         playerObj = GameObject.FindGameObjectWithTag("Player");
         WM = GameObject.FindGameObjectWithTag("WeaponManager").GetComponent<WeaponManager>();
         deckM = this.GetComponent<DeckManager>();
+        Globals.gm = this;
     }
 
     // Update is called once per frame

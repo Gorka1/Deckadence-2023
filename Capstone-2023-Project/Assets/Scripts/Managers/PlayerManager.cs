@@ -12,6 +12,7 @@ public class PlayerManager : MonoBehaviour
     int currHealth = 0;
 
     private void Start() {
+        Globals.player = this;
         currHealth = maxHealth;
     }
 

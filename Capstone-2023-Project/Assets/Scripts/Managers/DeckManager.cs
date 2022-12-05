@@ -61,6 +61,7 @@ public class DeckManager : MonoBehaviour
     public void RemoveCurrCard() {
         AddToDiscard(handList[handListInd]);
         handList[handListInd] = null;
+        Globals.uiHand.RemoveCard(handListInd); //?
     }
     CardData GetDeckCard() {
         if (internalDeckList.Count == 0) {
@@ -85,6 +86,7 @@ public class DeckManager : MonoBehaviour
             DiscardToDeck();
             // handList[position] = GetDeckCard();
         }
+        Globals.uiHand.AddCard(position, handList[position]); //?
     }
     public void AddToDeck(CardData newCard) {
         internalDeckList.Add(newCard);
