@@ -10,6 +10,9 @@ TagManager:
   - Enemy
   - Effect
   - WeaponManager
+  - UIGuns
+  - UIHand
+  - UIHealth
   layers:
   - Default
   - TransparentFX

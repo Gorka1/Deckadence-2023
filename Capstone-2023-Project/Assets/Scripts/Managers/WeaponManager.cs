@@ -29,7 +29,10 @@ public class WeaponManager : MonoBehaviour
     [SerializeField]
     float scrollwheelScale;
 
+    UIGuns uiGuns;
+
     private void Start() {
+        uiGuns = GameObject.FindGameObjectWithTag("UIGuns").GetComponent<UIGuns>();
         SetupPlayer();
     }
 
@@ -58,6 +61,16 @@ public class WeaponManager : MonoBehaviour
         // weaponListText.text = "Weapons: " + tempString;
     }
 
+    public void SetupPlayer() {
+        currindex = 0;
+        if (weaponInventory.Count != 0) {
+            SetWeaponAtInd(currindex, true);
+        }
+        foreach(GameObject go in weaponInventory) {
+            uiGuns.AddNewGun(go.GetComponent<BaseGunScript>().GetCardSprite());
+        }
+    }
+
     public List<GunStatusReport> GetGunStatus() {
         List<GunStatusReport> returnList = new List<GunStatusReport>(weaponInventory.Count);
         foreach (GameObject gun in weaponInventory) {
@@ -74,27 +87,34 @@ public class WeaponManager : MonoBehaviour
         weaponInventory[ind].GetComponent<BaseGunScript>().SetGameEnabled(status);
     }
 
+    public void ChangeWeaponToIndex(int newIndex) {
+        ChangeWeapon((int)Mathf.Repeat(newIndex - currindex, weaponInventory.Count - 1));
+    }
+
+    //Switches weapon and updates in ui. 
     private void ChangeWeapon(int indChange) {
         SetWeaponAtInd(currindex, false);
         currindex += indChange;
         SetWeaponAtInd(currindex, true);
-    }
-
-    public void SetupPlayer() {
-        currindex = 0;
-        if (weaponInventory.Count != 0) {
-            SetWeaponAtInd(currindex, true);
-        }
+        uiGuns.SwitchGun(currindex);
     }
 
     // take in prefab to add to weapon list
     public void AddWeapon(GameObject newWeapon) {
+
+        Debug.Log("adding weapon");
+
         GameObject gunObj = Instantiate(newWeapon, this.transform);
-        gunObj.GetComponent<BaseGunScript>().firePoint = firePoint;
+        BaseGunScript gunInfo = gunObj.GetComponent<BaseGunScript>();
+        gunInfo.firePoint = firePoint;
         weaponInventory.Add(gunObj);
         if (weaponInventory.Count == 1) {
             SetWeaponAtInd(currindex, true);
         }
+        uiGuns.AddNewGun(gunInfo.GetCardSprite());
+
+        //When we get a new gun, it feels good to switch to it. 
+        ChangeWeaponToIndex(weaponInventory.Count - 1);
     }
 
     public void UpdateAmmo() {

@@ -11,11 +11,16 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     private int currHealth = 0;
 
+    UIHealth uiHealth;
+
     private void Start() {
-        Globals.player = this;
+        
+        uiHealth = GameObject.FindGameObjectWithTag("UIHealth").GetComponent<UIHealth>();
+
+        //refill HP 
         while(currHealth < maxHealth) {
             currHealth++;
-            Globals.uiHealth.IncrementHP();
+            uiHealth.IncrementHP();
         }
     }
 
@@ -43,7 +48,7 @@ public class PlayerManager : MonoBehaviour
 
         //update in UI
         for(int i = 0; i < dmg; i++) {
-            Globals.uiHealth.DecrementHP();
+            uiHealth.DecrementHP();
         }
     }
 
@@ -53,7 +58,7 @@ public class PlayerManager : MonoBehaviour
 
         //update in UI
         for(int i = 0; i < health; i++) {
-            Globals.uiHealth.IncrementHP();
+            uiHealth.IncrementHP();
         }
     }
     

@@ -17,10 +17,12 @@ public class DeckManager : MonoBehaviour
     [SerializeField]
     int handListInd;
     GameManager GM;
+    UIHand uiHand;
 
     private void Start() {
         internalDeckList = new List<CardData>(deckList);
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
+        uiHand = GameObject.FindGameObjectWithTag("UIHand").GetComponent<UIHand>();
     }
 
     public void Init() {
@@ -62,7 +64,7 @@ public class DeckManager : MonoBehaviour
     public void RemoveCurrCard() {
         AddToDiscard(handList[handListInd]);
         handList[handListInd] = null;
-        Globals.uiHand.RemoveCard(handListInd); //?
+        uiHand.RemoveCard(handListInd); //?
     }
     CardData GetDeckCard() {
         if (internalDeckList.Count == 0) {
@@ -90,7 +92,7 @@ public class DeckManager : MonoBehaviour
             DiscardToDeck(); //QUESTION: why, what does this do? --Jaden 
             // handList[position] = GetDeckCard();
         }
-        Globals.uiHand.AddCard(position, handList[position]); //?
+        uiHand.AddCard(position, handList[position]); //?
     }
     public void AddToDeck(CardData newCard) {
         internalDeckList.Add(newCard);

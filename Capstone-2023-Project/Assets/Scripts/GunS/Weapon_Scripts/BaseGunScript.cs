@@ -12,6 +12,8 @@ public abstract class BaseGunScript : MonoBehaviour
     protected GameObject gunModel;
     [SerializeField]
     protected GameObject propFirePoint;
+    [SerializeField] 
+    Sprite gunCardSprite;
     protected WeaponManager WM;
     private float nextTimeToFire = 0f;
     bool gameEnabled = false;
@@ -55,6 +57,10 @@ public abstract class BaseGunScript : MonoBehaviour
         //     }
         // }
         return returnData;
+    }
+
+    public Sprite GetCardSprite() {
+        return gunCardSprite;
     }
 
     public void SetGameEnabled(bool condition = true) { gameEnabled = condition; }

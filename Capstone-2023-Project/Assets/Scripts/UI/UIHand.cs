@@ -12,8 +12,6 @@ public class UIHand : MonoBehaviour {
 
     void Start() {
 
-        Globals.uiHand = this;
-
         Image [] cards = GetComponentsInChildren<Image>();
 
         for(int i = 0; i < cards.Length; i++) {

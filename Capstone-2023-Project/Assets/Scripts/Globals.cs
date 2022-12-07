@@ -1,12 +1,14 @@
 public class Globals {
 
 
-    public static PlayerManager player;
-    public static GameManager gm;
+//this might not be the way to do things actually- weird between reloads. or how does dying work?
 
-    public static UIHand uiHand;
-    public static UIGuns uiGuns;
-    public static UIHealth uiHealth;
+    //public static PlayerManager player;
+    //public static GameManager gm;
+
+    //public static UIHand uiHand;
+    //public static UIGuns uiGuns;
+    //public static UIHealth uiHealth;
 
 
 

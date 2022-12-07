@@ -44,6 +44,6 @@ public class TextBasedUI : MonoBehaviour
         }
         WeaponText.text = weaponText;
         PointsText.text = "Points: " + GM.GetPlayerPoints();
-        HealthText.text = "Health: " + Globals.player.GetCurrHealth();
+        HealthText.text = "Health: " + PM.GetCurrHealth();
     }
 }
