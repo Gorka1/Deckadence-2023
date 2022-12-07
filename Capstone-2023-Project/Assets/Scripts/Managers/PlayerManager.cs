@@ -9,11 +9,14 @@ public class PlayerManager : MonoBehaviour
     [SerializeField]
     int maxHealth = 3;
     [SerializeField]
-    int currHealth = 0;
+    private int currHealth = 0;
 
     private void Start() {
         Globals.player = this;
-        currHealth = maxHealth;
+        while(currHealth < maxHealth) {
+            currHealth++;
+            Globals.uiHealth.IncrementHP();
+        }
     }
 
     private void Update() {
@@ -21,6 +24,37 @@ public class PlayerManager : MonoBehaviour
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
     }
-    public void TakeDmg(int dmg = 1) { currHealth -= dmg; }
+
     public int GetCurrHealth() { return currHealth; }
+
+    //Can be positive or negative, will direct appropriately to hurt or heal 
+    public void ChangeHP(int amount) {
+        if(amount > 0) {
+            Heal(amount);
+        } else if(amount < 0) {
+            TakeDmg(amount);
+        }
+    }
+
+    //Reduce HP by the positive number dmg.
+    public void TakeDmg(int dmg = 1) { 
+
+        currHealth -= dmg; 
+
+        //update in UI
+        for(int i = 0; i < dmg; i++) {
+            Globals.uiHealth.DecrementHP();
+        }
+    }
+
+    //Increase HP by this amount.
+    public void Heal(int health = 1) {
+        currHealth += health; 
+
+        //update in UI
+        for(int i = 0; i < health; i++) {
+            Globals.uiHealth.IncrementHP();
+        }
+    }
+    
 }

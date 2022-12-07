@@ -27,7 +27,8 @@ public class DeckManager : MonoBehaviour
         // handList = new List<CardData>(4);
         for (int i = 0; i < 4; i++) {
             if (handList[i] == null) {
-                handList[i] = GetDeckCard();
+                //handList[i] = GetDeckCard();
+                AddToHand(i);
             }
         }
     }
@@ -79,11 +80,14 @@ public class DeckManager : MonoBehaviour
             Init();
         }
     }
+
+    //Pulls a card from deck, puts in hand.
+    //Updates UI and other relevant things to reflect the change.
     public void AddToHand(int position) {
         if (internalDeckList.Count != 0) {
             handList[position] = GetDeckCard();
         } else {
-            DiscardToDeck();
+            DiscardToDeck(); //QUESTION: why, what does this do? --Jaden 
             // handList[position] = GetDeckCard();
         }
         Globals.uiHand.AddCard(position, handList[position]); //?
