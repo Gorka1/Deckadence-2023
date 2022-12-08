@@ -100,8 +100,8 @@ public class PlayerMovement : MonoBehaviour
     }
 
     Vector3 GetInputDirection() {
-        float x = Input.GetAxis("Horizontal");
-        float z = Input.GetAxis("Vertical");
+        float x = Input.GetAxisRaw("Horizontal");
+        float z = Input.GetAxisRaw("Vertical");
         return transform.right * x + transform.forward * z;
     }
 
