@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 0
   cardName: +FIRERATE
   testWeaponColor: {r: 0.27843142, g: 1, b: 0.33069816, a: 0}
-  cardGraphic: {fileID: 21300000, guid: dac7066ba29e16848ba8a9e33e84d3b5, type: 3}
+  cardGraphic: {fileID: 21300000, guid: d15d5f8f0e9df564bb80b80a0d005906, type: 3}
   rarity: 0
   effectObj: {fileID: 5695906508359778758, guid: a5e1d06e21f5d074da1e0e56ad6d575c, type: 3}
   targetType: 4

@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 100
   cardName: 
   testWeaponColor: {r: 0, g: 0, b: 0, a: 0}
-  cardGraphic: {fileID: 0}
+  cardGraphic: {fileID: 21300000, guid: af5fd1817a73604438c6ecd693d9e255, type: 3}
   rarity: 0
   effectObj: {fileID: 2374125837048381312, guid: f8d30a3c83014f44eabb094687db771b, type: 3}
   targetType: 4

@@ -13,5 +13,11 @@ MonoBehaviour:
   m_Name: TestCard_5
   m_EditorClassIdentifier: 
   cardID: 5
+  cost: 0
+  cardName: 
   testWeaponColor: {r: 0.27843142, g: 0.4192666, b: 1, a: 0}
-  cardGraphic: {fileID: 21300000, guid: dac7066ba29e16848ba8a9e33e84d3b5, type: 3}
+  cardGraphic: {fileID: 21300000, guid: af5fd1817a73604438c6ecd693d9e255, type: 3}
+  rarity: 0
+  effectObj: {fileID: 0}
+  targetType: 0
+  target: 
