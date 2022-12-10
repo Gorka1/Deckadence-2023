@@ -30,7 +30,7 @@ public class UIGuns : MonoBehaviour {
         for(int i = 0; i < cards.Count; i++) {
             Image card = cards[(int)(Mathf.Repeat(i + indexSwitchTo, cards.Count))];
             SlideTo(card.transform, positions[cards.Count - 1][i].position);
-            card.GetComponent<Canvas>().sortingOrder = i;
+            card.GetComponent<Canvas>().sortingOrder = cards.Count - i;
         }
 
     }
@@ -57,7 +57,7 @@ public class UIGuns : MonoBehaviour {
         StartCoroutine(SlideToCoroutine(thing, pos));
     }
 
-    float slideSpeed = 100f;
+    float slideSpeed = 500f;
     IEnumerator SlideToCoroutine(Transform thing, Vector3 pos) {
 
         while(thing.position != pos) {

@@ -128,13 +128,21 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ecb0265302695d340b8277d0a10c3578, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  gunName: gun
   firePoint: {fileID: 0}
-  weaponObject: {fileID: 11400000, guid: e3393b35ab5d067428b190884a601287, type: 2}
-  weaponData:
+  gunStats:
     dmg: 0
     fireRate: 0
-    projectilePresent: 0
-    fireType: basic
     range: 0
-    automatic: 0
+    fireType: 0
     ammo: 0
+    speed: 0
+    critChance: 0
+    critBonus: 200
+    spread: 0
+  gunData:
+    cardIcon: {fileID: 0}
+  gunModel: {fileID: 0}
+  propFirePoint: {fileID: 0}
+  gunCardSprite: {fileID: -1448301012, guid: 5844b607041af66418ba58336a0465ec, type: 3}
+  propProjectile: {fileID: 0}
