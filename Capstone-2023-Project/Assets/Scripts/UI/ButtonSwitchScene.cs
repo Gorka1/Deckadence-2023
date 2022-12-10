@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class TestSwitchScene : MonoBehaviour
+public class ButtonSwitchScene : MonoBehaviour
 {
     [SerializeField]
     string SceneName;

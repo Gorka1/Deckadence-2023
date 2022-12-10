@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8239561437351199523}
   m_Layer: 0
   m_Name: GameCardManager
-  m_TagString: Untagged
+  m_TagString: GameCardManager
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -44,3 +44,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e6b5487b942a7e04388a0a9f81dacb09, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  MainCardList:
+  - CD: {fileID: 0}
+    count: 0
+  - CD: {fileID: 0}
+    count: 0
+  - CD: {fileID: 0}
+    count: 0
+  - CD: {fileID: 0}
+    count: 0
+  - CD: {fileID: 0}
+    count: 0
+  CurrCardList:
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+  - {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
+  - {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
+  maxDeckSize: 10

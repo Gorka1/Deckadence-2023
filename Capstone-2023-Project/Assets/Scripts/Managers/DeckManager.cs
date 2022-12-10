@@ -7,7 +7,7 @@ public class DeckManager : MonoBehaviour
     [SerializeField]
     List<CardData> deckList;
     [SerializeField]
-    List<CardData> handList = new List<CardData>(4);
+    List<CardData> handList;
     [SerializeField]
     List<CardData> internalDeckList;
     [SerializeField]
@@ -18,24 +18,32 @@ public class DeckManager : MonoBehaviour
     int handListInd;
     GameManager GM;
     UIHand uiHand;
+    GameCardManager GCM;
+    bool initHand = true;
 
     private void Start() {
-        internalDeckList = new List<CardData>(deckList);
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         uiHand = GameObject.FindGameObjectWithTag("UIHand").GetComponent<UIHand>();
+        GCM = GameObject.FindGameObjectWithTag("GameCardManager").GetComponent<GameCardManager>();
+        deckList = GCM.CurrCardList;
+        internalDeckList = new List<CardData>(deckList);
+        handList  = new List<CardData>(4);
+        
     }
 
     public void Init() {
         // handList = new List<CardData>(4);
-        for (int i = 0; i < 4; i++) {
-            if (handList[i] == null) {
-                //handList[i] = GetDeckCard();
-                AddToHand(i);
-            }
-        }
+        
     }
 
     private void Update() {
+        if (initHand) { 
+            for (int i = 0; i < 4; i++) {
+                handList.Add(GetDeckCard());
+                uiHand.AddCard(i, handList[i]);
+            }
+            initHand = false;
+        }
         // float currScollInput = Input.mouseScrollDelta.y * scrollwheelScale;
         // if (currScollInput > .5f && handListInd < handList.Count - 1) {
         //     handListInd++;
@@ -75,11 +83,17 @@ public class DeckManager : MonoBehaviour
         internalDeckList.RemoveAt(index);
         return returnObj;
     }
+    // Moves data from the discard pile to the deck, used when deck is empty
     void DiscardToDeck() {
         if (internalDeckList.Count == 0) {
             internalDeckList = new List<CardData>(discardList);
             discardList.Clear();
             Init();
+            for (int i = 0; i < 4; i++) {
+                if (handList[i] == null) {
+                    AddToHand(i);
+                }
+            }
         }
     }
 

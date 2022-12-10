@@ -19,5 +19,9 @@ public class GameCardManager : MonoBehaviour
     void Start()
     {
         DontDestroyOnLoad(this.gameObject);
+        GameObject[] searchObj = GameObject.FindGameObjectsWithTag(this.transform.tag);
+        if (searchObj.Length != 1) {
+            Destroy(this.gameObject);
+        }
     }
 }
