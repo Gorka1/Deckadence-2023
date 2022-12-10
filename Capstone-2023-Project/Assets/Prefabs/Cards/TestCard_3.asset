@@ -16,7 +16,7 @@ MonoBehaviour:
   cost: 0
   cardName: +DAMAGE 2
   testWeaponColor: {r: 0.4528302, g: 0.2668213, b: 0.09611963, a: 0}
-  cardGraphic: {fileID: 21300000, guid: dd7f29ace8c17f1478c1653318219df1, type: 3}
+  cardGraphic: {fileID: 21300000, guid: af5fd1817a73604438c6ecd693d9e255, type: 3}
   rarity: 0
   effectObj: {fileID: 2374125837048381312, guid: 36b49a32a6e72c54c9b419ae89937bf0, type: 3}
   targetType: 4

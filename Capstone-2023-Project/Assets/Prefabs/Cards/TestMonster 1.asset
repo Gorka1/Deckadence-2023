@@ -13,12 +13,11 @@ MonoBehaviour:
   m_Name: TestMonster 1
   m_EditorClassIdentifier: 
   cardID: 4
-  cardRank: 0
+  cost: 0
+  cardName: 
   testWeaponColor: {r: 0, g: 0, b: 0, a: 0}
-  cardGraphic: {fileID: 21300000, guid: 1f1c3b6d61c2a2d4aaa7e434df04a02c, type: 3}
-  questCode: 0
-  effectScript: {fileID: 7142196451399494216, guid: f8d30a3c83014f44eabb094687db771b, type: 3}
+  cardGraphic: {fileID: 21300000, guid: af5fd1817a73604438c6ecd693d9e255, type: 3}
+  rarity: 0
+  effectObj: {fileID: 0}
   targetType: 0
   target: Weapon
-  questEvent: {fileID: 11400000, guid: 9a905c8844e1572418569ff5fb163777, type: 2}
-  numberOfEvents: 3
