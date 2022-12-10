@@ -363,6 +363,18 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
+      propertyPath: CurrCardList.Array.size
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
+      propertyPath: CurrCardList.Array.data[6]
+      value: 
+      objectReference: {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
+    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
+      propertyPath: CurrCardList.Array.data[7]
+      value: 
+      objectReference: {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
 --- !u!1 &965185543
@@ -808,4 +820,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 359a7184426e3c0419850cde5f671697, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  SceneName: testLevel
+  SceneName: testRoom
