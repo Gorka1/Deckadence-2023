@@ -16,6 +16,7 @@ TagManager:
   - GameCardManager
   - DeckMenu
   - MainCanvas
+  - RestartHotFix
   layers:
   - Default
   - TransparentFX
