@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: TestCard_2
   m_EditorClassIdentifier: 
   cardID: 2
-  cost: 0
+  cost: 100
   cardName: +FIRERATE
   testWeaponColor: {r: 0.27843142, g: 1, b: 0.33069816, a: 0}
   cardGraphic: {fileID: 21300000, guid: d15d5f8f0e9df564bb80b80a0d005906, type: 3}

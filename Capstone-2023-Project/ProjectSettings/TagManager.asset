@@ -14,6 +14,8 @@ TagManager:
   - UIHand
   - UIHealth
   - GameCardManager
+  - DeckMenu
+  - MainCanvas
   layers:
   - Default
   - TransparentFX

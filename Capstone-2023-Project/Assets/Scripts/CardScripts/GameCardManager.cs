@@ -24,4 +24,11 @@ public class GameCardManager : MonoBehaviour
             Destroy(this.gameObject);
         }
     }
+
+    public CardData GetRandomCardMaster() {
+        return MainCardList[Random.Range(0, MainCardList.Count - 1)].CD;
+    }
+    public CardData GetRandomCardDeck() {
+        return CurrCardList[Random.Range(0, CurrCardList.Count - 1)];
+    }
 }

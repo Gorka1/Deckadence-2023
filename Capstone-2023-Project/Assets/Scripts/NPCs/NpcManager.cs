@@ -15,6 +15,10 @@ public class NpcManager : MonoBehaviour
     bool isAttacking = false;
     [SerializeField]
     Renderer materialRenderer;
+    [SerializeField]
+    GameObject DamageVisual;
+    [SerializeField]
+    GameObject AttackVisual;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -56,8 +60,10 @@ public class NpcManager : MonoBehaviour
     IEnumerator ColorHit() {
         Color currColor = materialRenderer.material.color; 
         materialRenderer.material.SetColor("_Color", Color.red);
+        DamageVisual.SetActive(true);
         yield return new WaitForSeconds(.1f);
         materialRenderer.material.SetColor("_Color", currColor);
+        DamageVisual.SetActive(false);
     }
 
     public void AttackPlayer(GameObject player) {
@@ -68,11 +74,13 @@ public class NpcManager : MonoBehaviour
         isAttacking = true;
         Color currColor = materialRenderer.material.color; 
         materialRenderer.material.SetColor("_Color", Color.black);
+        AttackVisual.SetActive(true);
         yield return new WaitForSeconds(stats.attackRate);
         if (Vector3.Distance(GM.GetPlayerPos(), this.transform.position) <= stats.attackRange) {
             PM.TakeDmg();
         }
         materialRenderer.material.SetColor("_Color", currColor);
+        AttackVisual.SetActive(false);
         isAttacking = false;
     }
 }
