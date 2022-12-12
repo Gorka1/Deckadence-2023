@@ -11,6 +11,8 @@ public class SelectButton : MonoBehaviour
     Image cardSprite;
     [SerializeField]
     TMPro.TextMeshProUGUI cardText;
+    [SerializeField]
+    TMPro.TextMeshProUGUI countText;
     bool setup = false;
     public int count;
     [SerializeField]
@@ -22,14 +24,16 @@ public class SelectButton : MonoBehaviour
 
     private void Update() {
         if (setup) {
-            cardText.text = currCard.cardName + " : " + count;
+            cardText.text = currCard.cardName;
+            countText.text = "Count: " + count.ToString();
         }
     }
 
     public void SetUp(CardData newCD, int newCount) {
         currCard = newCD;
         count = newCount;
-        cardText.text = currCard.cardName + " : " + count;
+        cardText.text = currCard.cardName;
+        countText.text = "Count: " + count.ToString();
         cardSprite.sprite = newCD.cardGraphic;
         setup = true;
     }
