@@ -883,34 +883,6 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
-      propertyPath: MainCardList.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
-      propertyPath: MainCardList.Array.data[0].CD
-      value: 
-      objectReference: {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
-    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
-      propertyPath: MainCardList.Array.data[1].CD
-      value: 
-      objectReference: {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
-    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
-      propertyPath: MainCardList.Array.data[2].CD
-      value: 
-      objectReference: {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
-    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
-      propertyPath: MainCardList.Array.data[0].count
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
-      propertyPath: MainCardList.Array.data[1].count
-      value: 5
-      objectReference: {fileID: 0}
-    - target: {fileID: 8239561437351199523, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
-      propertyPath: MainCardList.Array.data[2].count
-      value: 5
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: e7a86e4f2592d214d9341049047fb3e6, type: 3}
 --- !u!1 &1658231195
