@@ -45,16 +45,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   MainCardList:
-  - CD: {fileID: 0}
-    count: 0
-  - CD: {fileID: 0}
-    count: 0
-  - CD: {fileID: 0}
-    count: 0
-  - CD: {fileID: 0}
-    count: 0
-  - CD: {fileID: 0}
-    count: 0
+  - CD: {fileID: 11400000, guid: 14c160a5a8187d547aee3c582b144f52, type: 2}
+    count: 5
+  - CD: {fileID: 11400000, guid: df72cc8738dde604ab433c61f879b451, type: 2}
+    count: 5
+  - CD: {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
+    count: 5
   CurrCardList:
   - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
   - {fileID: 11400000, guid: b93f49081e6af9449941926bd227c35c, type: 2}
