@@ -69,6 +69,7 @@ public class WeaponManager : MonoBehaviour
         foreach(GameObject go in weaponInventory) {
             uiGuns.AddNewGun(go.GetComponent<BaseGunScript>().GetCardSprite());
         }
+        uiGuns.SwitchGun(currindex); //update sorting order 
     }
 
     public List<GunStatusReport> GetGunStatus() {

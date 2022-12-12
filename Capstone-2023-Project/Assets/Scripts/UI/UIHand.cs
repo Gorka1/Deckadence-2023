@@ -1,4 +1,5 @@
 using System.Collections.Generic;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -10,6 +11,12 @@ public class UIHand : MonoBehaviour {
     Color transparency = new Color(1, 1, 1, 0.25f);
     Color opaque = new Color(1, 1, 1, 1);
 
+    //for selecting 
+    float heightDefault;
+    float heightSelectIncrease = 50;
+    Vector3 scaleDefault;
+    float scaleSelectIncrease = 1.2f;
+
     void Start() {
 
         Image [] cards = GetComponentsInChildren<Image>();
@@ -18,6 +25,10 @@ public class UIHand : MonoBehaviour {
             hand.Add(cards[i]);
             RemoveCard(i);
         }
+
+        heightDefault = cards[0].transform.position.y;
+        scaleDefault = cards[0].transform.localScale;
+
     }
 
     //Remove a card from the hand. 
@@ -33,6 +44,34 @@ public class UIHand : MonoBehaviour {
         }
         hand[index].sprite = card.cardGraphic;
         hand[index].color = opaque;
+    }
+
+    //Visually show a card in the hand is selected.
+    public void Select(int index) {
+        if(hand[index].transform.position.y == heightDefault) {
+            ClearSelect();
+            StartCoroutine(LerpSelect(hand[index].transform, heightDefault + heightSelectIncrease, scaleDefault * scaleSelectIncrease));
+        }
+    }
+
+    public void ClearSelect() {
+        foreach(Image card in hand) {
+            if(card.transform.position.y != heightDefault) {
+                //does this even work. TODO
+                StopCoroutine(LerpSelect(card.transform, heightDefault + heightSelectIncrease, scaleDefault * scaleSelectIncrease));
+                StartCoroutine(LerpSelect(card.transform, heightDefault, scaleDefault));
+            }
+        }
+    }
+
+    //Lerp the card to select/unselect height and size.
+    float lerpSpeed = 100f;
+    IEnumerator LerpSelect(Transform thing, float destY, Vector3 destScale) {
+
+        //TOOD lerp 
+
+        yield return null;
+
     }
     
 }
