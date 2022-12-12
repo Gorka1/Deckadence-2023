@@ -218,3 +218,4 @@ MonoBehaviour:
   CardButton: {fileID: 345049459537631774, guid: dcb6952a2af50f845a56fb97be38e960, type: 3}
   ButtonPanel: {fileID: 1304569089744326689}
   numOfNewCards: 3
+  Altar: {fileID: 0}

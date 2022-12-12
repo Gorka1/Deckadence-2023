@@ -62,6 +62,7 @@ public class WeaponManager : MonoBehaviour
     }
 
     public void SetupPlayer() {
+        // activates the first gun in the array
         currindex = 0;
         if (weaponInventory.Count != 0) {
             SetWeaponAtInd(currindex, true);
