@@ -8,6 +8,8 @@ public class ArenaManager : MonoBehaviour
     List<GameObject> Walls;
     [SerializeField]
     List<GameObject> Enemies;
+    [SerializeField]
+    List<GameObject> EndObjects;
     GameManager GM;
     bool isActive = false;
 
@@ -27,6 +29,9 @@ public class ArenaManager : MonoBehaviour
                 isActive = false;
                 foreach (GameObject w in Walls) {
                     w.SetActive(false);
+                }
+                foreach (GameObject e in EndObjects) {
+                    e.SetActive(true);
                 }
             }
         }
