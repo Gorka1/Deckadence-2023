@@ -18,7 +18,7 @@ public class UIGuns : MonoBehaviour {
 
     List<Image> cards = new List<Image>();
 
-    public void Start() {
+    public void Awake() {
         positions[0] = t1;
         positions[1] = t2;
         positions[2] = t3;
@@ -38,8 +38,6 @@ public class UIGuns : MonoBehaviour {
     //Creates a new card with the card image.
     public void AddNewGun(Sprite gunCardSprite) {
 
-        Debug.Log("adding ui gun card");
-
         Image newCard = Instantiate(cardPrefab, this.transform).GetComponent<Image>();
         newCard.gameObject.SetActive(true);
         newCard.sprite = gunCardSprite;
@@ -47,9 +45,9 @@ public class UIGuns : MonoBehaviour {
 
         //update positions
         for(int i = 0; i < cards.Count; i++) {
+            bool n = cards[i] == null;
             SlideTo(cards[i].transform, positions[cards.Count - 1][i].position);
         }
-
     }
 
     void SlideTo(Transform thing, Vector3 pos) {
