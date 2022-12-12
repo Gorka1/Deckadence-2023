@@ -38,18 +38,18 @@ public class GameManager : MonoBehaviour
         //     QueueM.ActivateFirstTwoQuests();
         //     startRun = true;
         // }
-        if (Input.GetKeyDown("f")) {    // start the deck system
-            deckM.Init();
-        }
+        // if (Input.GetKeyDown("f")) {    // start the deck system
+        //     deckM.Init();
+        // }
         if (Input.GetButtonDown("restart")) {
             SceneManager.LoadScene(SceneManager.GetActiveScene().name);
         }
-        if (Input.GetKeyDown("e")) {        // add a gun to the weapon manager
-            WM.AddWeapon(testGun);
-        }
-        if (Input.GetKeyDown("q")) {        // activate a card
-            deckM.UseCurrCard();
-        }
+        // if (Input.GetKeyDown("e")) {        // add a gun to the weapon manager
+        //     WM.AddWeapon(testGun);
+        // }
+        // if (Input.GetKeyDown("q")) {        // activate a card
+        //     deckM.UseCurrCard();
+        // }
         // 1-4 card selection
         if (Input.GetKeyDown("1")) {
             deckM.SetHandInd(0);
