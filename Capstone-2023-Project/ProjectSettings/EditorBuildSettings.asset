@@ -6,14 +6,17 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
+    path: Assets/Scenes/DeckCreator.unity
+    guid: 12933c4bbfe850a45baaea22ad8a9a56
+  - enabled: 1
+    path: Assets/Scenes/testLevel.unity
+    guid: e9bc1d10abe324c6a9b813e226a99133
+  - enabled: 1
     path: Assets/Scenes/testRoom.unity
     guid: 21796d27791b0124f9971b03d635c543
   - enabled: 1
     path: Assets/Scenes/Level1 Test.unity
     guid: d04728446d65181439150d2e9a6a6569
-  - enabled: 1
-    path: Assets/Scenes/testLevel.unity
-    guid: e9bc1d10abe324c6a9b813e226a99133
   - enabled: 1
     path: Assets/Scenes/WinScreen.unity
     guid: facafc8c454514702bbc44ea345391d4
