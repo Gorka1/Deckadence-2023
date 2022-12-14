@@ -624,7 +624,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3505449482831923185, guid: 9d68b855d4f473a46b71b4818f1aa62d, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 9d68b855d4f473a46b71b4818f1aa62d, type: 3}
@@ -645,6 +645,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 6761673866379298833}
     m_Modifications:
+    - target: {fileID: 1537142080620533559, guid: 1412cd49cb0846f41be3c192bfe83134, type: 3}
+      propertyPath: gunModel
+      value: 
+      objectReference: {fileID: 2457026014944780668}
     - target: {fileID: 1537142080620533559, guid: 1412cd49cb0846f41be3c192bfe83134, type: 3}
       propertyPath: firePoint
       value: 
@@ -699,6 +703,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1412cd49cb0846f41be3c192bfe83134, type: 3}
+--- !u!1 &2457026014944780668 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4968872799962419769, guid: 1412cd49cb0846f41be3c192bfe83134, type: 3}
+  m_PrefabInstance: {fileID: 7416838529569862469}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &6217286234817377460 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 3505449482831923185, guid: 1412cd49cb0846f41be3c192bfe83134, type: 3}

@@ -227,18 +227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 3289442942808217919, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 40.29
-      objectReference: {fileID: 0}
-    - target: {fileID: 5807693480595818068, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 6217286234817377460, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: m_IsActive
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 6701475015371736361, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
       propertyPath: m_RootOrder
       value: 5
@@ -287,10 +275,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: PlayerV3
       objectReference: {fileID: 0}
-    - target: {fileID: 8338662979381765234, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: gunModel
-      value: 
-      objectReference: {fileID: 2076436167}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
 --- !u!1001 &145258291
@@ -5722,11 +5706,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2037864195}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!1 &2076436167 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 2457026014944780668, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-  m_PrefabInstance: {fileID: 118748655}
-  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &2913000404226263716
 PrefabInstance:
   m_ObjectHideFlags: 0
