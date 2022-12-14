@@ -21,3 +21,4 @@ llb filter=lfs diff=lfs merge=lfs -text
 *.bundle[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
 *.bnk[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
 AkSoundEngine[[:space:]]filter=lfs[[:space:]]diff=lfs[[:space:]]merge=lfs[[:space:]]-text filter=lfs diff=lfs merge=lfs -text
+*.obj filter=lfs diff=lfs merge=lfs -text
