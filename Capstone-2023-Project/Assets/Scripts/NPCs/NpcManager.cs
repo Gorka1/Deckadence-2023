@@ -17,6 +17,10 @@ public class NpcManager : MonoBehaviour
     Renderer materialRenderer;
     [SerializeField]
     GameObject AttackingObj;
+    [SerializeField]
+    AudioSource HurtAudio;
+    [SerializeField]
+    AudioSource AttackingAudio;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
@@ -43,6 +47,7 @@ public class NpcManager : MonoBehaviour
             Die();
         } else {
             GM.NonLethalHit();
+            HurtAudio.Play();
             StartCoroutine(ColorHit());
         }
     }
@@ -64,6 +69,7 @@ public class NpcManager : MonoBehaviour
     public void AttackPlayer(GameObject player) {
         PlayerManager PM = player.GetComponent<PlayerManager>();
         StartCoroutine(AttackWait(PM));
+        AttackingAudio.Play();
     }
     IEnumerator AttackWait(PlayerManager PM) {
         isAttacking = true;
