@@ -14,6 +14,8 @@ public abstract class BaseGunScript : MonoBehaviour
     protected GameObject propFirePoint;
     [SerializeField] 
     Sprite gunCardSprite;
+    [SerializeField]
+    MuzzleFlash MuzzleFlash;
     protected WeaponManager WM;
     private float nextTimeToFire = 0f;
     bool gameEnabled = false;
@@ -40,6 +42,7 @@ public abstract class BaseGunScript : MonoBehaviour
                 nextTimeToFire = Time.time + 1f / gunStats.fireRate;
                 WM.UpdateAmmo();
                 FireEvent();
+                MuzzleFlash.Activate();
             }
         } else {
             if (gunModel.activeSelf) {

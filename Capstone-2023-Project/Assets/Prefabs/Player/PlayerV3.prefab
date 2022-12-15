@@ -123,7 +123,7 @@ Camera:
     height: 1
   near clip plane: 0.01
   far clip plane: 1000
-  field of view: 120
+  field of view: 130
   orthographic: 0
   orthographic size: 5
   m_Depth: -1
@@ -245,9 +245,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 6701475015371736360}
   playerBody: {fileID: 6701475015371736361}
-  baseSpeed: 20
-  slideSpeed: 35
-  gravity: -58.86
+  baseSpeed: 40
+  slideSpeed: 70
+  gravity: -88.5
   jumpHeight: 10
   momentumIncrease: 0.005
   momentumIncreaseDecay: 0.95
@@ -256,7 +256,7 @@ MonoBehaviour:
   momentumMax: 3
   momentumSlideMax: 0
   groundCheck: {fileID: 6701475014276459407}
-  groundDist: 0.4
+  groundDist: 2.5
   groundMask:
     serializedVersion: 2
     m_Bits: 64

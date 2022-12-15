@@ -227,26 +227,6 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
-    - target: {fileID: 6701475014955813808, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: field of view
-      value: 130
-      objectReference: {fileID: 0}
-    - target: {fileID: 6701475015371736358, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: gravity
-      value: -88.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6701475015371736358, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: baseSpeed
-      value: 40
-      objectReference: {fileID: 0}
-    - target: {fileID: 6701475015371736358, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: groundDist
-      value: 2.5
-      objectReference: {fileID: 0}
-    - target: {fileID: 6701475015371736358, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
-      propertyPath: slideSpeed
-      value: 70
-      objectReference: {fileID: 0}
     - target: {fileID: 6701475015371736361, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
       propertyPath: m_RootOrder
       value: 5
