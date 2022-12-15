@@ -16,6 +16,8 @@ public abstract class BaseGunScript : MonoBehaviour
     Sprite gunCardSprite;
     [SerializeField]
     MuzzleFlash MuzzleFlash;
+    [SerializeField]
+    AudioSource ShootingAudio;
     protected WeaponManager WM;
     private float nextTimeToFire = 0f;
     bool gameEnabled = false;
@@ -42,6 +44,7 @@ public abstract class BaseGunScript : MonoBehaviour
                 nextTimeToFire = Time.time + 1f / gunStats.fireRate;
                 WM.UpdateAmmo();
                 FireEvent();
+                ShootingAudio.Play();
                 MuzzleFlash.Activate();
             }
         } else {
