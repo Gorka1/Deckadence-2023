@@ -34,6 +34,15 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        //dev points button for testing 
+        //TODO REMOVE THIS IN A FINAL BUILD 
+        if(Input.GetKeyDown(KeyCode.L)) {
+            playerPoints += 100;
+        }
+
+
+
         // if (!startRun) {
         //     QueueM.ActivateFirstTwoQuests();
         //     startRun = true;
