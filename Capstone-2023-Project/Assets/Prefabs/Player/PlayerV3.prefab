@@ -256,10 +256,11 @@ MonoBehaviour:
   momentumMax: 3
   momentumSlideMax: 0
   groundCheck: {fileID: 6701475014276459407}
-  groundDist: 2.5
+  groundDist: 0.3
   groundMask:
     serializedVersion: 2
     m_Bits: 64
+  coyoteTime: 5
   momentum: 0
   slideHeightBuffer: 2
   momentumText: {fileID: 0}

@@ -25,6 +25,8 @@ public class PlayerMovement : MonoBehaviour
     public Transform groundCheck;
     public float groundDist = 0.4f;
     public LayerMask groundMask;
+    [SerializeField]
+    float coyoteTime;
 
     Vector3 velocity;
     bool isGrounded;
@@ -62,7 +64,11 @@ public class PlayerMovement : MonoBehaviour
     }
 
     void UpdateMovement() {
-        isGrounded = Physics.CheckSphere(groundCheck.position, groundDist, groundMask);
+        if (Physics.CheckSphere(groundCheck.position, groundDist, groundMask)) {
+            isGrounded = true;
+        } else {
+            StartCoroutine(CoyoteTimer());
+        }
 
         // checking if grounded
         if (isGrounded && velocity.y < 0) {
@@ -89,6 +95,7 @@ public class PlayerMovement : MonoBehaviour
         // jump controls
         if (Input.GetButtonDown("Jump") && isGrounded) {
             velocity.y = Mathf.Sqrt(jumpHeight * -2f * gravity);
+            isGrounded = false;
         }
 
         velocity.y += gravity * Time.deltaTime;
@@ -146,4 +153,10 @@ public class PlayerMovement : MonoBehaviour
         }
         return slideDirection * slideSpeed;
     }
+
+    IEnumerator CoyoteTimer() {
+        yield return new WaitForSeconds(coyoteTime);
+        isGrounded = false;
+    }
+
 }
