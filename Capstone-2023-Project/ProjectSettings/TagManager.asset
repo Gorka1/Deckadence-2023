@@ -17,6 +17,7 @@ TagManager:
   - DeckMenu
   - MainCanvas
   - SpeedLines
+  - RestartHotFix
   layers:
   - Default
   - TransparentFX

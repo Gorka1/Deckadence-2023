@@ -16,14 +16,15 @@ public class NpcManager : MonoBehaviour
     [SerializeField]
     Renderer materialRenderer;
     [SerializeField]
-    GameObject DamageVisual;
+    GameObject AttackingObj;
     [SerializeField]
-    GameObject AttackVisual;
+    AudioSource HurtAudio;
+    [SerializeField]
+    AudioSource AttackingAudio;
 
     private void Start() {
         GM = GameObject.FindGameObjectWithTag("GameManager").GetComponent<GameManager>();
         _agent = this.GetComponent<NavMeshAgent>();
-        // materialRenderer = this.GetComponent<Renderer>();
     }
 
     private void Update() {
@@ -46,6 +47,7 @@ public class NpcManager : MonoBehaviour
             Die();
         } else {
             GM.NonLethalHit();
+            HurtAudio.Play();
             StartCoroutine(ColorHit());
         }
     }
@@ -60,27 +62,26 @@ public class NpcManager : MonoBehaviour
     IEnumerator ColorHit() {
         Color currColor = materialRenderer.material.color; 
         materialRenderer.material.SetColor("_Color", Color.red);
-        DamageVisual.SetActive(true);
         yield return new WaitForSeconds(.1f);
         materialRenderer.material.SetColor("_Color", currColor);
-        DamageVisual.SetActive(false);
     }
 
     public void AttackPlayer(GameObject player) {
         PlayerManager PM = player.GetComponent<PlayerManager>();
         StartCoroutine(AttackWait(PM));
+        AttackingAudio.Play();
     }
     IEnumerator AttackWait(PlayerManager PM) {
         isAttacking = true;
         Color currColor = materialRenderer.material.color; 
         materialRenderer.material.SetColor("_Color", Color.black);
-        AttackVisual.SetActive(true);
+        AttackingObj?.SetActive(true);
         yield return new WaitForSeconds(stats.attackRate);
         if (Vector3.Distance(GM.GetPlayerPos(), this.transform.position) <= stats.attackRange) {
             PM.TakeDmg();
         }
         materialRenderer.material.SetColor("_Color", currColor);
-        AttackVisual.SetActive(false);
+        AttackingObj?.SetActive(false);
         isAttacking = false;
     }
 }
