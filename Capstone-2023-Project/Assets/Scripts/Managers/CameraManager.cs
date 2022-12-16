@@ -10,7 +10,7 @@ public class CameraManager : MonoBehaviour
 
 
     Vector3 origPos;
-    [SerializeField] float lowerAmount = 2f;
+    [SerializeField] float lowerAmount = 3f;
     Vector3 lowPos;
     PlayerMovement pm;
 
