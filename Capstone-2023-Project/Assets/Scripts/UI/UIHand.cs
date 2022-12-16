@@ -36,9 +36,9 @@ public class UIHand : MonoBehaviour {
     //Remove a card from the hand. 
     public void RemoveCard(int index) {
 
-        StartCoroutine(AnimateToGun(hand[index]));
-        //hand[index].sprite = null;
-        //hand[index].color = transparency;
+        StartCoroutine(AnimateToGun(Instantiate(hand[index]).transform));
+        hand[index].sprite = null;
+        hand[index].color = transparency;
     }
 
     //Add a card to the hand.
@@ -53,17 +53,15 @@ public class UIHand : MonoBehaviour {
 
     //Animate card to gun and kill it
     //-x^2 + 2x
-    IEnumerator AnimateToGun(Image card) {
+    IEnumerator AnimateToGun(Transform c) {
 
         Debug.Log("hello from hand");
 
-        GameObject c = Instantiate(card.gameObject);
-
-        float timeScale = 5f;
+        float timeScale = 1f;
 
         float t = 0;
-        Vector3 posOrig = card.transform.position;
-        Vector3 scaleOrig = card.transform.localScale;
+        Vector3 posOrig = c.transform.position;
+        Vector3 scaleOrig = c.transform.localScale;
 
         yield return null;
 

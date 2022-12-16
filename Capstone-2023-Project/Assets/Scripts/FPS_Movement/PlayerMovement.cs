@@ -11,8 +11,8 @@ public class PlayerMovement : MonoBehaviour
     public CharacterController controller;
     public Transform playerBody;
 
-    public float baseSpeed = 12f;
-    public float slideSpeed = 12f;
+    public float baseSpeed = 7f;
+    public float slideSpeed = 10f;
     public float gravity = -9.81f;
     public float jumpHeight = 4f;
     public float momentumIncrease;
