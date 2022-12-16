@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
+using UnityEngine.Events;
 
 // basic fps movement, taken from brackeys video
 public class PlayerMovement : MonoBehaviour
@@ -28,7 +29,7 @@ public class PlayerMovement : MonoBehaviour
 
     Vector3 velocity;
     bool isGrounded;
-    bool isSliding = false;
+    public bool isSliding {get; private set;}
     delegate Vector3 MoveFunction();
     MoveFunction move;
     [SerializeField]
@@ -43,6 +44,26 @@ public class PlayerMovement : MonoBehaviour
     Text momentumText;
     public bool moveEnabled = true;
 
+
+/* TODO: use events for this bc the ui and the camera and whatever else needs to 
+know about sliding are compltely different and they can just 
+recieve an event instead of having to reference this class 
+
+    UnityEvent slideStartEvent, slideStopEvent;
+
+    void Start() {
+        if(slideStartEvent == null) {
+            slideStartEvent = new UnityEvent();
+        }
+        slideStartEvent.AddListener(SlideStart);
+        if(slideEndEvent == null) {
+            slideEndEvent = new UnityEvent();
+        }
+        slideEndEvent.AddListener(SlideEnd);
+
+    }
+
+*/
 
     void Update()
     {

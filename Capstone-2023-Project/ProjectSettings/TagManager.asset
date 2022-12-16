@@ -16,6 +16,7 @@ TagManager:
   - GameCardManager
   - DeckMenu
   - MainCanvas
+  - SpeedLines
   layers:
   - Default
   - TransparentFX

@@ -7,6 +7,8 @@ public class UIHand : MonoBehaviour {
 
     List<Image> hand = new List<Image>();
 
+    [SerializeField] Transform gunLoc; //for when the card is applied to the gun 
+
     //TODO this is a placeholder for the December demo- replace with proper adding/removing
     Color transparency = new Color(1, 1, 1, 0.25f);
     Color opaque = new Color(1, 1, 1, 1);
@@ -33,8 +35,10 @@ public class UIHand : MonoBehaviour {
 
     //Remove a card from the hand. 
     public void RemoveCard(int index) {
-        hand[index].sprite = null;
-        hand[index].color = transparency;
+
+        StartCoroutine(AnimateToGun(hand[index]));
+        //hand[index].sprite = null;
+        //hand[index].color = transparency;
     }
 
     //Add a card to the hand.
@@ -45,6 +49,43 @@ public class UIHand : MonoBehaviour {
         hand[index].sprite = card.cardGraphic;
         hand[index].color = opaque;
     }
+
+
+    //Animate card to gun and kill it
+    //-x^2 + 2x
+    IEnumerator AnimateToGun(Image card) {
+
+        Debug.Log("hello from hand");
+
+        GameObject c = Instantiate(card.gameObject);
+
+        float timeScale = 5f;
+
+        float t = 0;
+        Vector3 posOrig = card.transform.position;
+        Vector3 scaleOrig = card.transform.localScale;
+
+        yield return null;
+
+
+        while(t < 1) {
+
+            Debug.Log(t);
+
+            t += Time.deltaTime * timeScale;
+
+            c.transform.position = Vector3.Lerp(posOrig, gunLoc.position, t);
+
+            c.transform.localScale = Vector3.Lerp(scaleOrig, Vector3.zero, t);
+
+            yield return null;
+        }
+
+        Destroy(c.gameObject);
+
+    }
+
+
 
     //Visually show a card in the hand is selected.
     public void Select(int index) {
