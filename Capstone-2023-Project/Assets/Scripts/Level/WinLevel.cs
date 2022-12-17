@@ -24,7 +24,7 @@ public class WinLevel : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(1);
         }
     }
 
