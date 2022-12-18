@@ -5,18 +5,14 @@ using UnityEngine.SceneManagement;
 
 public class WinLevel : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-
-    }
-
+    [SerializeField]
+    string ExitScene;
     // Update is called once per frame
     void Update()
     {
         if (Input.GetKeyDown(KeyCode.R)) // loads scene on user input From anywhere
         {
-            SceneManager.LoadScene(2);
+            SceneManager.LoadScene(0);
         }
     }
 
@@ -24,7 +20,7 @@ public class WinLevel : MonoBehaviour
     {
         if (collision.tag == "Player")
         {
-            SceneManager.LoadScene(3);
+            SceneManager.LoadScene(ExitScene);
         }
     }
 

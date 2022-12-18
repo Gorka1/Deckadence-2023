@@ -229,7 +229,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6701475015371736358, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
       propertyPath: coyoteTime
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 6701475015371736361, guid: 1d5ed6b8c0a5e1d43aef56bc4c182fcd, type: 3}
       propertyPath: m_RootOrder
@@ -5091,6 +5091,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6bdb091f3bbc41079650d3aff97b2b6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  ExitScene: WinScreen
 --- !u!1 &1786954466
 GameObject:
   m_ObjectHideFlags: 0
